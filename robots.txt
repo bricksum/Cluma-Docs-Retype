@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bricksum.github.io/Cluma-Docs-Retype/sitemap.xml.gz
