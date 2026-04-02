@@ -1,0 +1,14 @@
+name: Cluma Docs
+description: Cluma GPU 클러스터 관리 플랫폼 기술 문서
+url: https://bricksum.github.io/Cluma-Docs-Retype
+
+branding:
+  title: Cluma Docs
+  logo: ./static/logo.png
+
+links:
+  - text: GitHub
+    link: https://github.com/bricksum
+
+footer:
+  copyright: "© 2025 Bricksum. All rights reserved."
