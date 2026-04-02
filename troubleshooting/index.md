@@ -1,5 +1,5 @@
 ---
-label: 트러블슈팅
+label: Troubleshooting
 icon: alert
 order: 10
 ---
