@@ -11,34 +11,35 @@
     <meta name="generator" content="Retype 4.4.0">
 
     <!-- Primary Meta Tags -->
-    <title>Getting Started</title>
-    <meta name="title" content="Getting Started">
-    <meta name="description" content="Cluma 설치 및 시작 가이드입니다.">
+    <title>사전 요구사항</title>
+    <meta name="title" content="사전 요구사항">
+    <meta name="description" content="Cluma를 설치하기 전에 아래 요구사항을 먼저 확인하세요.">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://bricksum.github.io/Cluma-Docs-Retype/getting-started/">
+    <link rel="canonical" href="https://bricksum.github.io/Cluma-Docs-Retype/getting-started/prerequisites/">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://bricksum.github.io/Cluma-Docs-Retype/getting-started/">
-    <meta property="og:title" content="Getting Started">
-    <meta property="og:description" content="Cluma 설치 및 시작 가이드입니다.">
+    <meta property="og:url" content="https://bricksum.github.io/Cluma-Docs-Retype/getting-started/prerequisites/">
+    <meta property="og:title" content="사전 요구사항">
+    <meta property="og:description" content="Cluma를 설치하기 전에 아래 요구사항을 먼저 확인하세요.">
     <meta property="og:site_name" content="Cluma Docs">
     <meta property="og:locale" content="en_US">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://bricksum.github.io/Cluma-Docs-Retype/getting-started/">
-    <meta name="twitter:title" content="Getting Started">
-    <meta name="twitter:description" content="Cluma 설치 및 시작 가이드입니다.">
+    <meta name="twitter:url" content="https://bricksum.github.io/Cluma-Docs-Retype/getting-started/prerequisites/">
+    <meta name="twitter:title" content="사전 요구사항">
+    <meta name="twitter:description" content="Cluma를 설치하기 전에 아래 요구사항을 먼저 확인하세요.">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../resources/css/retype.css?v=4.4.0.828431049774" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.4.0.828431049774" rel="stylesheet">
 
-    <script data-cfasync="false" src="../resources/js/config.js?v=4.4.0.828431049774" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../resources/js/retype.js?v=4.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=4.4.0.828431049774" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.4.0.828431049774" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.4.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.4.0.828431049774" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.4.0.828431049774" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -142,8 +143,109 @@
                 <!-- Rendered if sidebar right is enabled -->
                 <div id="retype-sidebar-right-toggle"></div>
                 <!-- Page content  -->
-<h1 id="getting-started">Getting Started</h1>
-<p>Cluma 설치 및 시작 가이드입니다.</p>
+<h1 id="사전-요구사항">사전 요구사항</h1>
+<p>Cluma를 설치하기 전에 아래 요구사항을 먼저 확인하세요.</p>
+<hr>
+<h2 id="시스템-요구사항">시스템 요구사항</h2>
+<h3 id="kubernetes-클러스터">Kubernetes 클러스터</h3>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>항목</th>
+<th>요구사항</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Kubernetes 버전</td>
+<td>1.29 이상</td>
+</tr>
+<tr>
+<td>클러스터 권한</td>
+<td>&#x27;cluster-admin&#x27;</td>
+</tr>
+<tr>
+<td>노드 구성</td>
+<td>Control Plane 1대 이상 + Worker Node 1대 이상</td>
+</tr>
+<tr>
+<td>GPU 노드</td>
+<td>NVIDIA GPU 탑재 Worker Node (최소 1대)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="필수-구성-요소">필수 구성 요소</h3>
+<p><strong>StorageClass</strong></p>
+<p>Cluma는 사용자 데이터를 저장하기 위한 StorageClass가 클러스터에 정의되어 있어야 합니다.
+NFS 또는 Local 기반의 StorageClass를 권장합니다.</p>
+<div id="필수-구성-요소-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-bash"><code v-pre class="language-bash"># StorageClass 확인
+kubectl get storageclass</code></pre>
+</doc-codeblock></div>
+<p><strong>Private Container Registry</strong></p>
+<p>컨테이너 이미지를 관리하기 위한 Private Registry가 필요합니다.
+Harbor 또는 클러스터 내부 레지스트리를 사용할 수 있습니다.</p>
+<div id="필수-구성-요소-code-2" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-bash"><code v-pre class="language-bash"># 레지스트리 접근 확인
+docker login &lt;registry-url&gt;</code></pre>
+</doc-codeblock></div>
+<p><strong>NVIDIA GPU Driver</strong></p>
+<p>GPU 노드에 NVIDIA 드라이버가 설치되어 있어야 합니다.</p>
+<div id="필수-구성-요소-code-3" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-bash"><code v-pre class="language-bash"># GPU 드라이버 확인
+nvidia-smi</code></pre>
+</doc-codeblock></div>
+<hr>
+<h2 id="필수-도구">필수 도구</h2>
+<p>로컬 환경에서 Cluma를 설치하고 관리하기 위해 아래 도구가 필요합니다.</p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>도구</th>
+<th>버전</th>
+<th>용도</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code translate="no" v-pre>kubectl</code></td>
+<td>1.29+</td>
+<td>Kubernetes 클러스터 관리</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>helm</code></td>
+<td>3.0+</td>
+<td>Helm chart 배포</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>docker</code></td>
+<td>20.0+</td>
+<td>컨테이너 이미지 빌드</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="kubectl-설치-확인">kubectl 설치 확인</h3>
+<div id="kubectl-설치-확인-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-bash"><code v-pre class="language-bash">kubectl version --client</code></pre>
+</doc-codeblock></div>
+<h3 id="helm-설치-확인">helm 설치 확인</h3>
+<div id="helm-설치-확인-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-bash"><code v-pre class="language-bash">helm version</code></pre>
+</doc-codeblock></div>
+<hr>
+<h2 id="네트워크-요구사항">네트워크 요구사항</h2>
+<ul>
+<li>클러스터 노드 간 내부 통신이 가능해야 합니다.</li>
+<li>Control Plane과 Worker Node 사이에 포트 제한이 없어야 합니다.</li>
+<li>GPU 노드에서 Private Registry에 접근 가능해야 합니다.</li>
+</ul>
+<hr>
+<h2 id="다음-단계">다음 단계</h2>
+<p>요구사항 확인이 완료되면 <a href="../">Getting Started</a>로 이동하여 설치를 시작하세요.</p>
 
                 
                 <!-- Required only on API pages -->
@@ -153,23 +255,16 @@
             
                 <nav id="retype-nextprev" class="print:hidden flex mt-14">
                     <div class="w-1/2">
-                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../">
+                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../getting-started/">
                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                             <span>
                                 <span class="block text-xs font-normal text-base-text-muted">Previous</span>
-                                <span class="block mt-1">홈</span>
+                                <span class="block mt-1">Getting Started</span>
                             </span>
                         </a>
                     </div>
             
                     <div class="w-1/2">
-                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../getting-started/prerequisites/">
-                            <span>
-                                <span class="block text-xs font-normal text-right text-base-text-muted">Next</span>
-                                <span class="block mt-1">사전 요구사항 (K​8​s, Storage​Class 등)</span>
-                            </span>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
-                        </a>
                     </div>
                 </nav>
             </footer>
@@ -210,6 +305,6 @@
 
     <div id="retype-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Getting Started", level: 1, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "사전 요구사항 (K8s, StorageClass 등)", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
