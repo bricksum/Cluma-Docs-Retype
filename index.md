@@ -3,6 +3,8 @@ label: 홈
 icon: home
 ---
 
+<img width="1024" height="1024" alt="Cluma_logo" src="https://github.com/user-attachments/assets/e7253ec1-2510-42b1-8280-b1bebf9bf46d" />
+
 # Cluma 기술 문서에 오신 것을 환영합니다
 
 Cluma는 온프레미스 GPU 클러스터를 쉽게 관리하고,
