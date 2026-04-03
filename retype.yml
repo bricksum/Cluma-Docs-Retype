@@ -13,8 +13,6 @@ links:
   - text: Website
     link: https://www.bricksum.com/
     icon: home
-  - text: GitHub
-    link: https://github.com/bricksum
 
 footer:
   copyright: "© 2025 Bricksum. All rights reserved."
