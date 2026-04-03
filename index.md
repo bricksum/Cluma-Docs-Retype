@@ -1,5 +1,5 @@
 ---
-label: 홈
+label: Home
 icon: home
 ---
 

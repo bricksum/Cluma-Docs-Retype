@@ -1,5 +1,5 @@
 ---
-label: 사전 요구사항 (K8s, StorageClass 등)
+label: Prerequisites
 icon: checklist
 order: 90
 ---
