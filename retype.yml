@@ -6,7 +6,13 @@ branding:
   title: ""
   logo: ./cluma_logo.png
 
+css:
+  - ./static/custom.css
+
 links:
+  - text: Website
+    link: https://www.bricksum.com/
+    icon: home
   - text: GitHub
     link: https://github.com/bricksum
 
