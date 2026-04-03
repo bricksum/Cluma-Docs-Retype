@@ -11,26 +11,26 @@
     <meta name="generator" content="Retype 4.4.0">
 
     <!-- Primary Meta Tags -->
-    <title>유저 / 그룹 관리</title>
-    <meta name="title" content="유저 / 그룹 관리">
-    <meta name="description" content="유저 생성·수정·삭제, 그룹 생성·리소스 한도 설정, 유저-그룹 할당 방법을 설명합니다.">
+    <title>감사 로그</title>
+    <meta name="title" content="감사 로그">
+    <meta name="description" content="모든 유저·관리자 액션 이력을 조회합니다.">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://bricksum.github.io/Cluma-Docs-Retype/admin-guide/user-management/">
+    <link rel="canonical" href="https://bricksum.github.io/Cluma-Docs-Retype/admin-guide/audit-log/">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://bricksum.github.io/Cluma-Docs-Retype/admin-guide/user-management/">
-    <meta property="og:title" content="유저 / 그룹 관리">
-    <meta property="og:description" content="유저 생성·수정·삭제, 그룹 생성·리소스 한도 설정, 유저-그룹 할당 방법을 설명합니다.">
+    <meta property="og:url" content="https://bricksum.github.io/Cluma-Docs-Retype/admin-guide/audit-log/">
+    <meta property="og:title" content="감사 로그">
+    <meta property="og:description" content="모든 유저·관리자 액션 이력을 조회합니다.">
     <meta property="og:site_name" content="">
     <meta property="og:locale" content="en_US">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://bricksum.github.io/Cluma-Docs-Retype/admin-guide/user-management/">
-    <meta name="twitter:title" content="유저 / 그룹 관리">
-    <meta name="twitter:description" content="유저 생성·수정·삭제, 그룹 생성·리소스 한도 설정, 유저-그룹 할당 방법을 설명합니다.">
+    <meta name="twitter:url" content="https://bricksum.github.io/Cluma-Docs-Retype/admin-guide/audit-log/">
+    <meta name="twitter:title" content="감사 로그">
+    <meta name="twitter:description" content="모든 유저·관리자 액션 이력을 조회합니다.">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
@@ -154,8 +154,8 @@
                 <!-- Rendered if sidebar right is enabled -->
                 <div id="retype-sidebar-right-toggle"></div>
                 <!-- Page content  -->
-<h1 id="유저--그룹-관리">유저 / 그룹 관리</h1>
-<p>유저 생성·수정·삭제, 그룹 생성·리소스 한도 설정, 유저-그룹 할당 방법을 설명합니다.</p>
+<h1 id="감사-로그">감사 로그</h1>
+<p>모든 유저·관리자 액션 이력을 조회합니다.</p>
 
                 
                 <!-- Required only on API pages -->
@@ -165,20 +165,20 @@
             
                 <nav id="retype-nextprev" class="print:hidden flex mt-14">
                     <div class="w-1/2">
-                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../admin-guide/">
+                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../admin-guide/dashboard/">
                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                             <span>
                                 <span class="block text-xs font-normal text-base-text-muted">Previous</span>
-                                <span class="block mt-1">Admin guide</span>
+                                <span class="block mt-1">관리자 대시보드</span>
                             </span>
                         </a>
                     </div>
             
                     <div class="w-1/2">
-                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../admin-guide/node-management/">
+                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../user-guide/">
                             <span>
                                 <span class="block text-xs font-normal text-right text-base-text-muted">Next</span>
-                                <span class="block mt-1">노드 관리</span>
+                                <span class="block mt-1">User guide</span>
                             </span>
                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                         </a>
@@ -222,6 +222,6 @@
 
     <div id="retype-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "유저 / 그룹 관리", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "감사 로그", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
