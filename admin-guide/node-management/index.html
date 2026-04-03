@@ -11,34 +11,34 @@
     <meta name="generator" content="Retype 4.4.0">
 
     <!-- Primary Meta Tags -->
-    <title>Getting Started</title>
-    <meta name="title" content="Getting Started">
-    <meta name="description" content="Cluma 설치 및 시작 가이드입니다.">
+    <title>노드 관리</title>
+    <meta name="title" content="노드 관리">
+    <meta name="description" content="클러스터 노드 등록·수정·활성화, GPU 모델·MIG 설정 방법을 설명합니다.">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://bricksum.github.io/Cluma-Docs-Retype/getting-started/">
+    <link rel="canonical" href="https://bricksum.github.io/Cluma-Docs-Retype/admin-guide/node-management/">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://bricksum.github.io/Cluma-Docs-Retype/getting-started/">
-    <meta property="og:title" content="Getting Started">
-    <meta property="og:description" content="Cluma 설치 및 시작 가이드입니다.">
+    <meta property="og:url" content="https://bricksum.github.io/Cluma-Docs-Retype/admin-guide/node-management/">
+    <meta property="og:title" content="노드 관리">
+    <meta property="og:description" content="클러스터 노드 등록·수정·활성화, GPU 모델·MIG 설정 방법을 설명합니다.">
     <meta property="og:site_name" content="">
     <meta property="og:locale" content="en_US">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://bricksum.github.io/Cluma-Docs-Retype/getting-started/">
-    <meta name="twitter:title" content="Getting Started">
-    <meta name="twitter:description" content="Cluma 설치 및 시작 가이드입니다.">
+    <meta name="twitter:url" content="https://bricksum.github.io/Cluma-Docs-Retype/admin-guide/node-management/">
+    <meta name="twitter:title" content="노드 관리">
+    <meta name="twitter:description" content="클러스터 노드 등록·수정·활성화, GPU 모델·MIG 설정 방법을 설명합니다.">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../resources/css/retype.css?v=4.4.0.828519992178" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.4.0.828519992178" rel="stylesheet">
 
-    <script data-cfasync="false" src="../resources/js/config.js?v=4.4.0.828519992178" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../resources/js/retype.js?v=4.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=4.4.0.828519992178" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.4.0.828519992178" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.4.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.4.0.828519992178" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -55,7 +55,7 @@
                 <div class="flex items-center px-2 md:px-6">
                     <a id="retype-branding-logo" href="https://bricksum.github.io/Cluma-Docs-Retype/" class="flex items-center leading-snug text-2xl">
                         <span class="grow-0 shrink-0 overflow-hidden">
-                            <img class="max-h-10 md:inline-block" src="../cluma_logo_2.png" alt="" width="139" height="40">
+                            <img class="max-h-10 md:inline-block" src="../../cluma_logo_2.png" alt="" width="139" height="40">
                         </span>
                     </a>
                 </div>
@@ -154,8 +154,8 @@
                 <!-- Rendered if sidebar right is enabled -->
                 <div id="retype-sidebar-right-toggle"></div>
                 <!-- Page content  -->
-<h1 id="getting-started">Getting Started</h1>
-<p>Cluma 설치 및 시작 가이드입니다.</p>
+<h1 id="노드-관리">노드 관리</h1>
+<p>클러스터 노드 등록·수정·활성화, GPU 모델·MIG 설정 방법을 설명합니다.</p>
 
                 
                 <!-- Required only on API pages -->
@@ -165,20 +165,20 @@
             
                 <nav id="retype-nextprev" class="print:hidden flex mt-14">
                     <div class="w-1/2">
-                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../">
+                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../admin-guide/">
                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                             <span>
                                 <span class="block text-xs font-normal text-base-text-muted">Previous</span>
-                                <span class="block mt-1">홈</span>
+                                <span class="block mt-1">Admin guide</span>
                             </span>
                         </a>
                     </div>
             
                     <div class="w-1/2">
-                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../getting-started/prerequisites/">
+                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../admin-guide/registry-management/">
                             <span>
                                 <span class="block text-xs font-normal text-right text-base-text-muted">Next</span>
-                                <span class="block mt-1">사전 요구사항 (K​8​s, Storage​Class 등)</span>
+                                <span class="block mt-1">레지스트리 관리</span>
                             </span>
                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                         </a>
@@ -222,6 +222,6 @@
 
     <div id="retype-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Getting Started", level: 1, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "노드 관리", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
