@@ -1,9 +1,12 @@
+
+<div align="center">
+  <img width="200" height="200" alt="Cluma_logo" src="https://github.com/user-attachments/assets/e7253ec1-2510-42b1-8280-b1bebf9bf46d" />
+</div>
+
 ---
 label: 홈
 icon: home
 ---
-
-<img width="1024" height="1024" alt="Cluma_logo" src="https://github.com/user-attachments/assets/e7253ec1-2510-42b1-8280-b1bebf9bf46d" />
 
 # Cluma 기술 문서에 오신 것을 환영합니다
 
