@@ -1,6 +1,7 @@
 ---
 label: 유저 / 그룹 관리
 icon: people
+order: 100
 ---
 
 # 유저 / 그룹 관리

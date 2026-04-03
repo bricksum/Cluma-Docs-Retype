@@ -1,7 +1,7 @@
 ---
 label: User guide
 icon: book
-order: 80
+order: 70
 ---
 
 # 사용자 가이드

@@ -1,7 +1,7 @@
 ---
 label: Troubleshooting
 icon: alert
-order: 10
+order: 60
 ---
 
 # 트러블슈팅

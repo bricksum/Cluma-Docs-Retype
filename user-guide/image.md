@@ -1,6 +1,7 @@
 ---
 label: 이미지
 icon: container
+order: 80
 ---
 
 # 이미지

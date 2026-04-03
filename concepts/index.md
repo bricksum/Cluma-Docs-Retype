@@ -1,7 +1,7 @@
 ---
 label: 핵심 개념
 icon: book
-order: 80
+order: 90
 ---
 
 # 핵심 개념

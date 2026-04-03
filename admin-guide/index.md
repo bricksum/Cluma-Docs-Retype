@@ -1,7 +1,7 @@
 ---
 label: Admin guide
 icon: shield
-order: 70
+order: 80
 ---
 
 # 관리자 가이드

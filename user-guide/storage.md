@@ -1,6 +1,7 @@
 ---
 label: 스토리지
 icon: database
+order: 90
 ---
 
 # 스토리지

@@ -1,6 +1,7 @@
 ---
 label: 노드 관리
 icon: server
+order: 90
 ---
 
 # 노드 관리

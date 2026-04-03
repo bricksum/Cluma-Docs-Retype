@@ -1,6 +1,7 @@
 ---
 label: 모니터링
 icon: graph
+order: 70
 ---
 
 # 모니터링

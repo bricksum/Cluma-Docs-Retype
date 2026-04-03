@@ -1,6 +1,7 @@
 ---
 label: 레지스트리 관리
 icon: stack
+order: 80
 ---
 
 # 레지스트리 관리
