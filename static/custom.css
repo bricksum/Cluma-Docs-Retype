@@ -1,0 +1,10 @@
+header img,
+.header img,
+.navbar img,
+.navbar-brand img,
+.logo img,
+a.logo img {
+  height: 48px !important;
+  max-height: 48px !important;
+  width: auto !important;
+}
