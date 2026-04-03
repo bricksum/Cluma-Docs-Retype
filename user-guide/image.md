@@ -1,6 +1,6 @@
 ---
 label: 이미지
-icon: container
+icon: image
 order: 80
 ---
 
