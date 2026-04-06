@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
     <meta name="turbo-root" content="/Cluma-Docs-Retype">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.4.0.828777541707">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.4.0.828777838540">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 4.4.0">
@@ -13,7 +13,7 @@
     <!-- Primary Meta Tags -->
     <title>관리자 대시보드</title>
     <meta name="title" content="관리자 대시보드">
-    <meta name="description" content="전체 유저·그룹의 리소스 사용량을 통합 모니터링하는 방법을 설명합니다.">
+    <meta name="description" content="클러스터 전체 리소스 사용 현황과 그룹별 사용량을 통합 모니터링하는 화면입니다.">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://bricksum.github.io/Cluma-Docs-Retype/admin-guide/dashboard/">
@@ -22,7 +22,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://bricksum.github.io/Cluma-Docs-Retype/admin-guide/dashboard/">
     <meta property="og:title" content="관리자 대시보드">
-    <meta property="og:description" content="전체 유저·그룹의 리소스 사용량을 통합 모니터링하는 방법을 설명합니다.">
+    <meta property="og:description" content="클러스터 전체 리소스 사용 현황과 그룹별 사용량을 통합 모니터링하는 화면입니다.">
     <meta property="og:site_name" content="">
     <meta property="og:locale" content="en_US">
 
@@ -30,15 +30,15 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://bricksum.github.io/Cluma-Docs-Retype/admin-guide/dashboard/">
     <meta name="twitter:title" content="관리자 대시보드">
-    <meta name="twitter:description" content="전체 유저·그룹의 리소스 사용량을 통합 모니터링하는 방법을 설명합니다.">
+    <meta name="twitter:description" content="클러스터 전체 리소스 사용 현황과 그룹별 사용량을 통합 모니터링하는 화면입니다.">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../../resources/css/retype.css?v=4.4.0.828777541707" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.4.0.828777838540" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.4.0.828777541707" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.4.0.828777838540" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=4.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.4.0.828777541707" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.4.0.828777838540" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -155,143 +155,134 @@
                 <div id="retype-sidebar-right-toggle"></div>
                 <!-- Page content  -->
 <h1 id="관리자-대시보드">관리자 대시보드</h1>
-<p>전체 유저·그룹의 리소스 사용량을 통합 모니터링하는 방법을 설명합니다.</p>
+<p>클러스터 전체 리소스 사용 현황과 그룹별 사용량을 통합 모니터링하는 화면입니다.</p>
+<p>관리자 메뉴 → <strong>관리자 대시보드</strong>에서 접근합니다.</p>
 <hr>
-<h2 id="개요">개요</h2>
-<p>관리자 대시보드는 클러스터 전체의 리소스 사용 현황을 한눈에 파악할 수 있는 통합 모니터링 화면입니다. 일반 사용자의 개인 대시보드와 달리, 모든 유저와 그룹의 리소스를 종합적으로 확인할 수 있습니다.</p>
-<hr>
-<h2 id="클러스터-리소스-현황">클러스터 리소스 현황</h2>
-<p>대시보드 상단에서 클러스터 전체의 리소스 사용량을 확인합니다.</p>
+<h2 id="클러스터-전체-현황">클러스터 전체 현황</h2>
+<p>상단 <strong>클러스터 전체 현황</strong> 섹션에서 리소스 상태를 카드로 확인합니다.</p>
+<p>각 카드는 <strong>사용량 / 할당량 / 총량</strong> 및 <strong>사용률</strong> 프로그레스 바로 표시됩니다.</p>
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
 <tr>
-<th>항목</th>
-<th>설명</th>
+<th>카드</th>
+<th>단위</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>CPU</td>
-<td>전체 CPU 코어 중 사용 중인 코어 수 및 사용률</td>
+<td>cores</td>
 </tr>
 <tr>
-<td>메모리</td>
-<td>전체 메모리 중 사용 중인 용량 및 사용률</td>
+<td>Memory</td>
+<td>GB</td>
 </tr>
 <tr>
-<td>GPU</td>
-<td>전체 GPU 중 할당된 GPU 수 및 사용률</td>
+<td>Storage</td>
+<td>GB</td>
 </tr>
 <tr>
-<td>스토리지</td>
-<td>전체 스토리지 용량 중 사용 중인 용량 및 사용률</td>
+<td>디바이스별 현황</td>
+<td>개 (가속기 유형별로 개별 카드 표시)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>사용률에 따라 프로그레스 바와 수치 색상이 변경됩니다.</p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>범위</th>
+<th>색상</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0 ~ 69%</td>
+<td>기본</td>
 </tr>
 <tr>
-<td>컨테이너</td>
-<td>실행 중인 컨테이너 수 및 상태별 분포</td>
+<td>70 ~ 89%</td>
+<td>노란색</td>
 </tr>
 <tr>
-<td>노드</td>
-<td>전체 노드 수 및 상태별 분포</td>
+<td>90% 이상</td>
+<td>빨간색</td>
 </tr>
 </tbody>
 </table>
 </div>
 <hr>
-<h2 id="그룹별-리소스-사용-현황">그룹별 리소스 사용 현황</h2>
-<p>각 그룹이 할당받은 리소스 한도 대비 실제 사용량을 확인할 수 있습니다.</p>
-<h3 id="확인-가능한-정보">확인 가능한 정보</h3>
-<ul>
-<li>그룹별 CPU, 메모리, GPU, 스토리지 사용량 / 한도</li>
-<li>그룹별 실행 중인 컨테이너 수</li>
-<li>그룹별 소속 유저 수</li>
-<li>그룹 리소스 사용률 (한도 대비 %)</li>
-</ul>
-<h3 id="필터링">필터링</h3>
-<ul>
-<li>특정 그룹을 선택하여 상세 사용 현황 확인</li>
-<li>리소스 사용률 기준으로 정렬</li>
-<li>리소스 한도에 근접한 그룹 우선 표시</li>
-</ul>
-<hr>
-<h2 id="유저별-리소스-사용-현황">유저별 리소스 사용 현황</h2>
-<p>개별 유저의 리소스 사용량을 확인할 수 있습니다.</p>
-<h3 id="확인-가능한-정보-1">확인 가능한 정보</h3>
-<ul>
-<li>유저별 CPU, 메모리, GPU, 스토리지 사용량</li>
-<li>유저별 실행 중인 컨테이너 수 및 상태</li>
-<li>유저별 GPU 사용 시간 잔여량 (시간 제한이 설정된 경우)</li>
-<li>유저 소속 그룹 정보</li>
-</ul>
-<h3 id="필터링-1">필터링</h3>
-<ul>
-<li>특정 그룹 소속 유저만 표시</li>
-<li>리소스 사용량 기준으로 정렬</li>
-<li>활성/비활성 유저 필터</li>
-</ul>
-<hr>
-<h2 id="컨테이너-상태-분포">컨테이너 상태 분포</h2>
-<p>클러스터에서 실행 중인 모든 컨테이너의 상태를 한눈에 파악할 수 있습니다.</p>
+<h2 id="그룹별-리소스-사용량">그룹별 리소스 사용량</h2>
+<p>하단 <strong>그룹별 리소스 사용량</strong> 섹션에서 그룹 단위 사용 현황을 확인합니다.</p>
+<h3 id="그룹-필터">그룹 필터</h3>
+<p>상단 드롭다운에서 그룹을 선택하면 파이차트 표시 내용이 전환됩니다.</p>
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
 <tr>
-<th>상태</th>
-<th>색상</th>
+<th>선택</th>
+<th>파이차트 표시 내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>전체</td>
+<td>클러스터 전체 용량 대비 각 그룹의 할당량 비율</td>
+</tr>
+<tr>
+<td>특정 그룹</td>
+<td>해당 그룹의 할당량 대비 현재 사용량</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>파이차트에서 그룹 영역을 직접 클릭해도 해당 그룹 상세 보기로 전환되며, <strong>← 전체 보기</strong> 버튼으로 돌아올 수 있습니다.</p>
+<p>파이차트 위에 마우스를 올리면 해당 그룹의 할당량과 비율이 툴팁으로 표시됩니다.</p>
+<h3 id="파이차트">파이차트</h3>
+<p>CPU / Memory / 가속기 / Storage 4개 리소스에 대해 그룹별 비율을 파이차트로 시각화합니다.<br />
+미할당 용량은 회색으로 표시됩니다.</p>
+<h3 id="그룹별-요약-테이블">그룹별 요약 테이블</h3>
+<p>모든 그룹의 리소스 사용 현황을 한눈에 확인할 수 있습니다.</p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>열</th>
 <th>설명</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Creating</td>
-<td>파란색</td>
-<td>생성 중</td>
+<td>그룹명</td>
+<td>그룹 이름 (클릭 시 해당 그룹 상세 보기로 전환)</td>
 </tr>
 <tr>
-<td>Pending</td>
-<td>연한 파란색</td>
-<td>리소스 대기 중</td>
+<td>CPU 사용/할당</td>
+<td>CPU 코어 사용량 / 할당량 및 사용률(%)</td>
 </tr>
 <tr>
-<td>Running</td>
-<td>녹색</td>
-<td>정상 실행 중</td>
+<td>MEMORY 사용/할당</td>
+<td>메모리(GB) 사용량 / 할당량 및 사용률(%)</td>
 </tr>
 <tr>
-<td>Deleting</td>
-<td>노란색</td>
-<td>삭제 진행 중</td>
+<td>디바이스 사용/할당</td>
+<td>가속기 유형별 사용량 / 할당량</td>
 </tr>
 <tr>
-<td>Stopped</td>
-<td>회색</td>
-<td>정지됨</td>
+<td>STORAGE 사용/할당</td>
+<td>스토리지(GB) 사용량 / 할당량 및 사용률(%)</td>
 </tr>
 <tr>
-<td>Failed</td>
-<td>빨간색</td>
-<td>오류 발생</td>
-</tr>
-<tr>
-<td>Completed</td>
-<td>보라색</td>
-<td>작업 완료</td>
+<td>POD 수</td>
+<td>현재 실행 중인 Pod 수</td>
 </tr>
 </tbody>
 </table>
 </div>
-<hr>
-<h2 id="노드-상태-현황">노드 상태 현황</h2>
-<p>클러스터에 등록된 모든 노드의 상태와 리소스 사용량을 확인합니다.</p>
-<h3 id="노드별-확인-가능한-정보">노드별 확인 가능한 정보</h3>
-<ul>
-<li>노드 이름 및 IP 주소</li>
-<li>노드 상태 (Ready / NotReady / SchedulingDisabled)</li>
-<li>CPU / 메모리 사용률</li>
-<li>GPU 사용률 (GPU 노드인 경우)</li>
-<li>실행 중인 컨테이너 수</li>
-</ul>
+<p>사용률이 70% 이상이면 노란색, 90% 이상이면 빨간색으로 강조됩니다. 할당량이 없는 경우 <code translate="no" v-pre>(미할당)</code> 으로 표시됩니다.</p>
 
                 
                 <!-- Required only on API pages -->
