@@ -29,6 +29,7 @@ order: 80
 | 노드 현황 | 클러스터 노드 상태 및 Pod 현황 실시간 확인 |
 | 클러스터 모니터링 | Grafana 기반 클러스터 실시간 모니터링 |
 
+
 ---
 
 ## 이 섹션의 문서
@@ -39,4 +40,3 @@ order: 80
 - [레포지토리 관리](./registry-management.md) — 이미지 레포지토리 등록 및 관리
 - [노드 현황](./cluster-dashboard.md) — 노드 상태 및 Pod 현황 실시간 확인
 - [클러스터 모니터링](./cluster-monitoring.md) — Grafana 기반 리소스 사용량 시계열 분석
-- [감사 로그](./audit-log.md) — 사용자 및 관리자 액션 이력 추적
