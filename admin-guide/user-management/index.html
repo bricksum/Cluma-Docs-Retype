@@ -5,15 +5,15 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
     <meta name="turbo-root" content="/Cluma-Docs-Retype">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.4.0.828769074216">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.4.0.828773790918">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 4.4.0">
 
     <!-- Primary Meta Tags -->
-    <title>유저 / 그룹 관리</title>
-    <meta name="title" content="유저 / 그룹 관리">
-    <meta name="description" content="유저 생성·수정·삭제, 그룹 생성·리소스 한도 설정, 유저-그룹 할당 방법을 설명합니다.">
+    <title>사용자 관리</title>
+    <meta name="title" content="사용자 관리">
+    <meta name="description" content="사용자 생성·수정·삭제 및 역할 설정 방법을 설명합니다.">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://bricksum.github.io/Cluma-Docs-Retype/admin-guide/user-management/">
@@ -21,24 +21,24 @@
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://bricksum.github.io/Cluma-Docs-Retype/admin-guide/user-management/">
-    <meta property="og:title" content="유저 / 그룹 관리">
-    <meta property="og:description" content="유저 생성·수정·삭제, 그룹 생성·리소스 한도 설정, 유저-그룹 할당 방법을 설명합니다.">
+    <meta property="og:title" content="사용자 관리">
+    <meta property="og:description" content="사용자 생성·수정·삭제 및 역할 설정 방법을 설명합니다.">
     <meta property="og:site_name" content="">
     <meta property="og:locale" content="en_US">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://bricksum.github.io/Cluma-Docs-Retype/admin-guide/user-management/">
-    <meta name="twitter:title" content="유저 / 그룹 관리">
-    <meta name="twitter:description" content="유저 생성·수정·삭제, 그룹 생성·리소스 한도 설정, 유저-그룹 할당 방법을 설명합니다.">
+    <meta name="twitter:title" content="사용자 관리">
+    <meta name="twitter:description" content="사용자 생성·수정·삭제 및 역할 설정 방법을 설명합니다.">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../../resources/css/retype.css?v=4.4.0.828769074216" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.4.0.828773790918" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.4.0.828769074216" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.4.0.828773790918" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=4.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.4.0.828769074216" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.4.0.828773790918" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -154,12 +154,46 @@
                 <!-- Rendered if sidebar right is enabled -->
                 <div id="retype-sidebar-right-toggle"></div>
                 <!-- Page content  -->
-<h1 id="유저--그룹-관리">유저 / 그룹 관리</h1>
-<p>유저 생성·수정·삭제, 그룹 생성·리소스 한도 설정, 유저-그룹 할당 방법을 설명합니다.</p>
+<h1 id="사용자-관리">사용자 관리</h1>
+<p>사용자 생성·수정·삭제 및 역할 설정 방법을 설명합니다.</p>
 <hr>
-<h2 id="유저-관리">유저 관리</h2>
-<h3 id="유저-생성">유저 생성</h3>
-<p>관리자 메뉴 → <strong>유저 관리</strong> → <strong>유저 추가</strong>에서 새로운 사용자를 생성합니다.</p>
+<h2 id="사용자-목록">사용자 목록</h2>
+<p>관리자 메뉴 → <strong>사용자 관리</strong>에서 전체 사용자 목록을 확인할 수 있습니다.</p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>컬럼</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>이메일</td>
+<td>로그인에 사용하는 이메일 주소</td>
+</tr>
+<tr>
+<td>이름</td>
+<td>사용자 표시 이름</td>
+</tr>
+<tr>
+<td>역할</td>
+<td>관리자 또는 사용자</td>
+</tr>
+<tr>
+<td>그룹</td>
+<td>소속된 그룹 목록</td>
+</tr>
+<tr>
+<td>작업</td>
+<td>수정(연필 아이콘) / 삭제(휴지통 아이콘)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr>
+<h2 id="사용자-생성">사용자 생성</h2>
+<p>우측 상단 <strong>사용자 추가하기</strong> 버튼을 클릭합니다.</p>
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -187,19 +221,27 @@
 </tr>
 <tr>
 <td>역할</td>
-<td>관리자(Admin) 또는 일반 사용자(User)</td>
+<td>관리자 또는 사용자</td>
 <td>필수</td>
+</tr>
+<tr>
+<td>그룹</td>
+<td>소속 그룹 (여러 개 선택 가능)</td>
+<td>선택</td>
 </tr>
 </tbody>
 </table>
 </div>
-<p>신규 유저는 생성 시 <strong>Default 그룹</strong>에 자동으로 배정됩니다. 필요에 따라 추가 그룹을 할당할 수 있습니다.</p>
-<h3 id="유저-수정">유저 수정</h3>
-<p>유저 목록에서 대상 유저를 선택한 후 이름, 이메일, 역할을 수정할 수 있습니다.</p>
-<h3 id="유저-활성화--비활성화">유저 활성화 / 비활성화</h3>
+<p>생성 시 그룹을 지정하지 않으면 <strong>Default 그룹</strong>에 자동으로 배정됩니다.</p>
+<hr>
+<h2 id="사용자-수정">사용자 수정</h2>
+<p>목록에서 수정할 사용자의 <strong>연필 아이콘</strong>을 클릭합니다.</p>
+<p>이름, 이메일, 역할을 수정할 수 있습니다. <strong>비밀번호 초기화</strong> 버튼을 통해 해당 사용자의 비밀번호를 초기화할 수 있습니다.</p>
+<hr>
+<h2 id="사용자-활성화--비활성화">사용자 활성화 / 비활성화</h2>
 <p>계정을 일시적으로 사용 중지할 수 있습니다.</p>
 <ul>
-<li><strong>비활성화</strong>: 해당 유저는 로그인이 불가능해지며, 실행 중인 컨테이너는 자동으로 정지됩니다.</li>
+<li><strong>비활성화</strong>: 해당 사용자는 로그인이 불가능해지며, 실행 중인 컨테이너는 자동으로 정지됩니다.</li>
 <li><strong>활성화</strong>: 비활성화된 계정을 다시 사용 가능한 상태로 전환합니다.</li>
 </ul>
 <div class="flex mb-6">
@@ -214,13 +256,14 @@
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-            <h5>유저 비활성화 시 주의</h5>
-<p>비활성화 시 해당 유저의 실행 중인 컨테이너가 정지됩니다. 중요한 작업이 진행 중인지 사전에 확인하세요.</p>
+            <h5>사용자 비활성화 시 주의</h5>
+<p>비활성화 시 해당 사용자의 실행 중인 컨테이너가 정지됩니다. 중요한 작업이 진행 중인지 사전에 확인하세요.</p>
         </div>
     </div>
 </div>
-<h3 id="유저-삭제">유저 삭제</h3>
-<p>유저를 영구적으로 삭제합니다.</p>
+<hr>
+<h2 id="사용자-삭제">사용자 삭제</h2>
+<p>목록에서 삭제할 사용자의 <strong>휴지통 아이콘</strong>을 클릭합니다. 삭제 확인을 위해 <strong>사용자 이름을 직접 입력</strong>해야 합니다.</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-danger"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
@@ -234,143 +277,10 @@
         </div>
         <div class="pr-5 ml-3 w-full">
             <h5>삭제 시 주의</h5>
-<p>유저를 삭제하면 해당 유저의 컨테이너와 개인 스토리지가 함께 삭제될 수 있습니다. 삭제 전 반드시 확인하세요.</p>
+<p>이 작업은 되돌릴 수 없습니다. 사용자를 삭제하면 해당 사용자의 컨테이너와 개인 스토리지가 함께 삭제될 수 있습니다.</p>
         </div>
     </div>
 </div>
-<hr>
-<h2 id="그룹-관리">그룹 관리</h2>
-<p>그룹은 유저를 묶고 리소스 한도를 정의하는 단위입니다.</p>
-<h3 id="그룹-생성">그룹 생성</h3>
-<p>관리자 메뉴 → <strong>그룹 관리</strong> → <strong>그룹 추가</strong>에서 새로운 그룹을 생성합니다.</p>
-<div class="table-wrapper scrollbar overflow-hidden">
-<table class="comfortable">
-<thead>
-<tr>
-<th>항목</th>
-<th>설명</th>
-<th>필수 여부</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>그룹 이름</td>
-<td>그룹 식별 이름</td>
-<td>필수</td>
-</tr>
-<tr>
-<td>설명</td>
-<td>그룹 용도 설명</td>
-<td>선택</td>
-</tr>
-<tr>
-<td>CPU 한도</td>
-<td>그룹 전체에서 사용 가능한 최대 CPU 코어 수</td>
-<td>필수</td>
-</tr>
-<tr>
-<td>메모리 한도</td>
-<td>그룹 전체에서 사용 가능한 최대 메모리 (GB)</td>
-<td>필수</td>
-</tr>
-<tr>
-<td>GPU 한도</td>
-<td>그룹 전체에서 사용 가능한 최대 GPU 수</td>
-<td>필수</td>
-</tr>
-<tr>
-<td>스토리지 한도</td>
-<td>그룹 전체에서 사용 가능한 최대 스토리지 용량 (GB)</td>
-<td>필수</td>
-</tr>
-</tbody>
-</table>
-</div>
-<h3 id="그룹-리소스-한도-설정">그룹 리소스 한도 설정</h3>
-<p>그룹에 할당된 리소스 한도는 소속 유저들이 생성할 수 있는 컨테이너 및 스토리지의 총량을 제한합니다.</p>
-<div id="그룹-리소스-한도-설정-code-1" class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-none"><code v-pre class="language-none">예시) AI 연구팀 그룹
-├── CPU: 64코어
-├── 메모리: 256GB
-├── GPU: 8개
-└── 스토리지: 2TB
- 
-→ 소속 유저 A가 GPU 4개 사용 중이면,
-   소속 유저 B는 최대 GPU 4개까지만 추가 사용 가능</code></pre>
-</doc-codeblock></div>
-<p>유저가 컨테이너를 생성할 때 그룹 리소스 한도를 초과하면 자동으로 생성이 차단되며, 잔여 리소스를 안내하는 메시지가 표시됩니다.</p>
-<h3 id="그룹-수정">그룹 수정</h3>
-<p>기존 그룹의 이름, 설명, 리소스 한도를 수정할 수 있습니다.</p>
-<div class="flex mb-6">
-    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
-    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
-        <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
-                <g fill="currentColor"><g>
-                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
-                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
-                </g></g>
-            </svg>
-        </div>
-        <div class="pr-5 ml-3 w-full">
-            <h5>리소스 한도 축소 시 주의</h5>
-<p>리소스 한도를 현재 사용량보다 낮게 설정할 경우, 기존 컨테이너는 유지되지만 새로운 컨테이너 생성이 제한됩니다.</p>
-        </div>
-    </div>
-</div>
-<h3 id="그룹-삭제">그룹 삭제</h3>
-<p>그룹을 삭제하면 그룹 내 모든 리소스(컨테이너, 스토리지)가 함께 삭제됩니다.</p>
-<div class="flex mb-6">
-    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-danger"></div>
-    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
-        <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-danger" width="22" height="22" viewBox="0 0 24 24" role="presentation">
-                <g fill="currentColor"><g>
-                    <path d="M21.71 6.15L15.85.29c-.19-.18-.44-.29-.71-.29H6.86c-.27 0-.52.11-.71.29L.29 6.15c-.18.19-.29.44-.29.71v8.28c0 .27.11.52.29.71l5.86 5.86c.19.18.44.29.71.29h8.28c.27 0 .52-.11.71-.29l5.86-5.86a.99.99 0 00.29-.71V6.86c0-.27-.11-.52-.29-.71zM20 14.73L14.73 20H7.27L2 14.73V7.27L7.27 2h7.45L20 7.27v7.46z"></path>
-                    <path d="M11 12c.55 0 1-.45 1-1V7c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .55.45 1 1 1zM11.01 14c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
-                </g></g>
-            </svg>
-        </div>
-        <div class="pr-5 ml-3 w-full">
-            <h5>그룹 삭제 시 주의</h5>
-<p>그룹 삭제는 되돌릴 수 없습니다. 그룹에 소속된 모든 컨테이너와 스토리지가 영구 삭제되므로 신중하게 진행하세요.</p>
-        </div>
-    </div>
-</div>
-<hr>
-<h2 id="유저-그룹-할당">유저-그룹 할당</h2>
-<h3 id="유저를-그룹에-추가">유저를 그룹에 추가</h3>
-<p>관리자 메뉴 → <strong>그룹 관리</strong> → 대상 그룹 선택 → <strong>멤버 관리</strong>에서 유저를 추가합니다.</p>
-<ul>
-<li>한 유저는 여러 그룹에 동시에 소속될 수 있습니다.</li>
-<li>유저가 여러 그룹에 소속된 경우, 컨테이너 생성 시 소속 그룹 중 하나를 선택합니다.</li>
-</ul>
-<h3 id="유저를-그룹에서-제거">유저를 그룹에서 제거</h3>
-<p>그룹의 멤버 관리에서 유저를 제거합니다. 유저가 마지막 그룹에서 제거되면 리소스를 사용할 수 없게 되므로, 최소 하나의 그룹에 소속된 상태를 유지하는 것을 권장합니다.</p>
-<hr>
-<h2 id="gpu-사용-시간-관리">GPU 사용 시간 관리</h2>
-<p>그룹 또는 유저 단위로 GPU 사용 시간을 할당하고 관리할 수 있습니다.</p>
-<div class="table-wrapper scrollbar overflow-hidden">
-<table class="comfortable">
-<thead>
-<tr>
-<th>설정 단위</th>
-<th>설명</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>그룹 단위</td>
-<td>그룹 전체 유저의 GPU 사용 시간 총합 제한</td>
-</tr>
-<tr>
-<td>유저 단위</td>
-<td>개별 유저의 GPU 사용 시간 제한</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>할당된 GPU 사용 시간이 소진되면 실행 중인 GPU 컨테이너가 자동으로 정지되고, 새로운 GPU 컨테이너 생성이 제한됩니다. 관리자는 언제든지 GPU 사용 시간을 추가 할당할 수 있습니다.</p>
 <hr>
 <h2 id="역할-기반-접근-제어">역할 기반 접근 제어</h2>
 <div class="table-wrapper scrollbar overflow-hidden">
@@ -384,7 +294,7 @@
 </thead>
 <tbody>
 <tr>
-<td>유저 생성/수정/삭제</td>
+<td>사용자 생성/수정/삭제</td>
 <td style="text-align: center;">O</td>
 <td style="text-align: center;">X</td>
 </tr>
@@ -394,7 +304,7 @@
 <td style="text-align: center;">X</td>
 </tr>
 <tr>
-<td>유저-그룹 할당/제거</td>
+<td>사용자-그룹 할당/제거</td>
 <td style="text-align: center;">O</td>
 <td style="text-align: center;">X</td>
 </tr>
@@ -404,17 +314,12 @@
 <td style="text-align: center;">X</td>
 </tr>
 <tr>
-<td>GPU 사용 시간 할당</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">X</td>
-</tr>
-<tr>
 <td>노드 관리</td>
 <td style="text-align: center;">O</td>
 <td style="text-align: center;">X</td>
 </tr>
 <tr>
-<td>레지스트리 관리</td>
+<td>레포지토리 관리</td>
 <td style="text-align: center;">O</td>
 <td style="text-align: center;">X</td>
 </tr>
@@ -470,10 +375,10 @@
                     </div>
             
                     <div class="w-1/2">
-                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../admin-guide/node-management/">
+                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../admin-guide/group-management/">
                             <span>
                                 <span class="block text-xs font-normal text-right text-base-text-muted">Next</span>
-                                <span class="block mt-1">노드 관리</span>
+                                <span class="block mt-1">그룹 관리</span>
                             </span>
                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                         </a>
@@ -517,6 +422,6 @@
 
     <div id="retype-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "유저 / 그룹 관리", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "사용자 관리", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
