@@ -11,26 +11,26 @@
     <meta name="generator" content="Retype 4.4.0">
 
     <!-- Primary Meta Tags -->
-    <title>클러스터 대시보드</title>
-    <meta name="title" content="클러스터 대시보드">
-    <meta name="description" content="클러스터 노드 상태 및 Pod 현황을 실시간으로 모니터링하는 방법을 설명합니다.">
+    <title>사용자 빠른 시작</title>
+    <meta name="title" content="사용자 빠른 시작">
+    <meta name="description" content="처음 Cluma를 사용하는 경우 아래 순서로 진행합니다.">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://bricksum.github.io/Cluma-Docs-Retype/admin-guide/cluster-dashboard/">
+    <link rel="canonical" href="https://bricksum.github.io/Cluma-Docs-Retype/getting-started/quickstart/">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://bricksum.github.io/Cluma-Docs-Retype/admin-guide/cluster-dashboard/">
-    <meta property="og:title" content="클러스터 대시보드">
-    <meta property="og:description" content="클러스터 노드 상태 및 Pod 현황을 실시간으로 모니터링하는 방법을 설명합니다.">
+    <meta property="og:url" content="https://bricksum.github.io/Cluma-Docs-Retype/getting-started/quickstart/">
+    <meta property="og:title" content="사용자 빠른 시작">
+    <meta property="og:description" content="처음 Cluma를 사용하는 경우 아래 순서로 진행합니다.">
     <meta property="og:site_name" content="">
     <meta property="og:locale" content="en_US">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://bricksum.github.io/Cluma-Docs-Retype/admin-guide/cluster-dashboard/">
-    <meta name="twitter:title" content="클러스터 대시보드">
-    <meta name="twitter:description" content="클러스터 노드 상태 및 Pod 현황을 실시간으로 모니터링하는 방법을 설명합니다.">
+    <meta name="twitter:url" content="https://bricksum.github.io/Cluma-Docs-Retype/getting-started/quickstart/">
+    <meta name="twitter:title" content="사용자 빠른 시작">
+    <meta name="twitter:description" content="처음 Cluma를 사용하는 경우 아래 순서로 진행합니다.">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
@@ -154,14 +154,37 @@
                 <!-- Rendered if sidebar right is enabled -->
                 <div id="retype-sidebar-right-toggle"></div>
                 <!-- Page content  -->
-<h1 id="클러스터-대시보드">클러스터 대시보드</h1>
-<p>클러스터 노드 상태 및 Pod 현황을 실시간으로 모니터링하는 방법을 설명합니다.</p>
+<h1 id="사용자-빠른-시작">사용자 빠른 시작</h1>
+<p>처음 Cluma를 사용하는 경우 아래 순서로 진행합니다.</p>
 <hr>
-<h2 id="개요">개요</h2>
-<p>클러스터 대시보드는 Kubernetes 클러스터에 등록된 노드의 상태와 Pod 현황을 실시간으로 확인하는 화면입니다. 노드를 카드 또는 리스트 형태로 보여주며, 노드를 클릭하면 상세 정보와 진단 결과를 확인할 수 있습니다.</p>
+<h2 id="1단계--로그인">1단계 — 로그인</h2>
+<p>관리자로부터 받은 계정 정보로 로그인합니다.</p>
+<p>로그인 후 사이드바에서 소속 그룹이 표시되는지 확인합니다. 그룹이 없는 경우 관리자에게 그룹 배정을 요청합니다.</p>
 <hr>
-<h2 id="화면-구성">화면 구성</h2>
-<h3 id="상단-정보-바">상단 정보 바</h3>
+<h2 id="2단계--잔여-리소스-확인">2단계 — 잔여 리소스 확인</h2>
+<p>상단 헤더에서 현재 그룹의 CPU / 메모리 / GPU / 스토리지 잔여량을 확인합니다.</p>
+<p>컨테이너와 스토리지는 그룹의 리소스 한도 안에서만 생성할 수 있습니다. 잔여 리소스가 부족한 경우 관리자에게 한도 증가를 요청합니다.</p>
+<hr>
+<h2 id="3단계--스토리지-생성">3단계 — 스토리지 생성</h2>
+<p>학습 데이터, 모델 파일 등 컨테이너가 삭제되어도 유지해야 할 데이터는 스토리지에 저장합니다.</p>
+<ol>
+<li>사이드바 → <strong>스토리지</strong> → <strong>스토리지 생성</strong></li>
+<li>이름, 용량, 스토리지 유형을 입력하고 생성합니다.</li>
+</ol>
+<p>자세한 내용은 <a href="../../user-guide/storage/">스토리지 관리</a>를 참고합니다.</p>
+<hr>
+<h2 id="4단계--ssh-key-등록-선택">4단계 — SSH Key 등록 (선택)</h2>
+<p>비밀번호 없이 SSH로 컨테이너에 접속하려면 SSH Key를 미리 등록합니다.</p>
+<ol>
+<li>우측 하단 프로필 메뉴 → <strong>SSH Key 관리</strong></li>
+<li>Key 이름을 입력하고 공개키를 직접 입력하거나 파일로 업로드합니다.</li>
+</ol>
+<hr>
+<h2 id="5단계--컨테이너-생성">5단계 — 컨테이너 생성</h2>
+<ol>
+<li>사이드바 → <strong>컨테이너</strong> → <strong>새 컨테이너 만들기</strong></li>
+<li><strong>고급 모드</strong>에서 아래 항목을 설정합니다.</li>
+</ol>
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -172,227 +195,74 @@
 </thead>
 <tbody>
 <tr>
-<td>마지막 업데이트</td>
-<td>데이터가 마지막으로 갱신된 시각</td>
+<td>컨테이너 이름</td>
+<td>식별 이름</td>
 </tr>
 <tr>
-<td>자동 새로고침</td>
-<td>활성화된 경우 주기적으로 데이터를 자동 갱신</td>
+<td>이미지</td>
+<td>레지스트리 탐색 또는 퍼블릭 주소 직접 입력</td>
 </tr>
 <tr>
-<td>새로고침</td>
-<td>클릭 시 데이터를 즉시 갱신</td>
+<td>CPU / 메모리</td>
+<td>필요한 컴퓨팅 리소스 선택</td>
 </tr>
 <tr>
-<td>그리드 / 리스트</td>
-<td>노드 표시 방식 전환 버튼 (그리드 ↔ 리스트)</td>
+<td>가속기(GPU)</td>
+<td>필요한 GPU 수 선택 (0이면 CPU 전용)</td>
+</tr>
+<tr>
+<td>포트 포워딩</td>
+<td>SSH(22), Jupyter(8888), VSCode(8080) 등</td>
+</tr>
+<tr>
+<td>스토리지 마운트</td>
+<td>3단계에서 만든 스토리지 선택 및 마운트 경로 지정</td>
+</tr>
+<tr>
+<td>SSH Key</td>
+<td>4단계에서 등록한 Key 선택</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>자주 사용하는 설정은 <strong>템플릿으로 저장</strong>해두면 다음에 원클릭으로 빠르게 생성할 수 있습니다.</p>
+<hr>
+<h2 id="6단계--컨테이너-접속">6단계 — 컨테이너 접속</h2>
+<p>컨테이너 상태가 <strong>Running</strong>이 되면 접속할 수 있습니다.</p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>방법</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Jupyter</td>
+<td>상세 페이지 → Jupyter 버튼 → 브라우저에서 JupyterLab 열기</td>
+</tr>
+<tr>
+<td>Terminal</td>
+<td>상세 페이지 → Terminal 버튼 → SSH 터미널 연결</td>
+</tr>
+<tr>
+<td>VSCode</td>
+<td>상세 페이지 → VSCode 버튼 → VSCode Desktop SSH Remote 연결</td>
+</tr>
+<tr>
+<td>SSH</td>
+<td>상세 페이지 → SSH 접속 명령어 복사 후 터미널에서 실행</td>
 </tr>
 </tbody>
 </table>
 </div>
 <hr>
-<h2 id="요약-카드">요약 카드</h2>
-<p>화면 상단에 클러스터 전체 현황이 카드 형태로 표시됩니다.</p>
-<div class="table-wrapper scrollbar overflow-hidden">
-<table class="comfortable">
-<thead>
-<tr>
-<th>카드</th>
-<th>설명</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Ready 노드</strong></td>
-<td>정상 동작 중인 노드 수</td>
-</tr>
-<tr>
-<td><strong>Drained 노드</strong></td>
-<td>스케줄러에서 제외된 노드 수</td>
-</tr>
-<tr>
-<td><strong>전체 Pod</strong></td>
-<td>클러스터의 전체 Pod 수</td>
-</tr>
-<tr>
-<td><strong>실행 중 Pod</strong></td>
-<td>정상 실행 중인 Pod 수</td>
-</tr>
-<tr>
-<td><strong>Pending Pod</strong></td>
-<td>대기 중인 Pod 수</td>
-</tr>
-</tbody>
-</table>
-</div>
-<hr>
-<h2 id="노드-목록">노드 목록</h2>
-<p>요약 카드 하단에 <strong>Ready 노드</strong>와 <strong>Drained 노드</strong> 섹션이 구분되어 표시됩니다.</p>
-<h3 id="뷰-모드">뷰 모드</h3>
-<p>우측 상단의 <strong>그리드 / 리스트</strong> 버튼으로 표시 방식을 전환할 수 있습니다.</p>
-<div class="table-wrapper scrollbar overflow-hidden">
-<table class="comfortable">
-<thead>
-<tr>
-<th>모드</th>
-<th>설명</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>그리드</strong></td>
-<td>노드를 카드 형태로 표시. 가속기 시각화를 포함한 상세 정보 확인에 적합</td>
-</tr>
-<tr>
-<td><strong>리스트</strong></td>
-<td>노드를 행 형태로 표시. 많은 노드를 한눈에 파악하는 데 적합</td>
-</tr>
-</tbody>
-</table>
-</div>
-<h3 id="필터">필터</h3>
-<p>노드 목록은 두 가지 필터로 조회 범위를 좁힐 수 있습니다.</p>
-<p><strong>가속기 시각화 모드</strong></p>
-<div class="table-wrapper scrollbar overflow-hidden">
-<table class="comfortable">
-<thead>
-<tr>
-<th>옵션</th>
-<th>설명</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>사용유무</td>
-<td>가속기 사용 여부 기준으로 표시</td>
-</tr>
-<tr>
-<td>Pod별 구분</td>
-<td>실행 중인 Pod별로 가속기 사용 현황 구분</td>
-</tr>
-<tr>
-<td>그룹별 구분</td>
-<td>그룹별 가속기 사용 현황 구분 (그룹 범례 표시)</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p><strong>디바이스 필터</strong></p>
-<div class="table-wrapper scrollbar overflow-hidden">
-<table class="comfortable">
-<thead>
-<tr>
-<th>옵션</th>
-<th>설명</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>전체 디바이스</td>
-<td>모든 노드 표시</td>
-</tr>
-<tr>
-<td>NVIDIA GPU 등</td>
-<td>특정 디바이스 종류가 있는 노드만 표시</td>
-</tr>
-</tbody>
-</table>
-</div>
-<hr>
-<h2 id="노드-상세-정보">노드 상세 정보</h2>
-<p>노드 카드(그리드) 또는 노드 행(리스트)을 클릭하면 상세 정보 모달이 열립니다.</p>
-<h3 id="노드-스펙">노드 스펙</h3>
-<div class="table-wrapper scrollbar overflow-hidden">
-<table class="comfortable">
-<thead>
-<tr>
-<th>항목</th>
-<th>설명</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>상태 배지</td>
-<td>Ready / Not Ready</td>
-</tr>
-<tr>
-<td>역할 배지</td>
-<td>Control Plane / Data Plane</td>
-</tr>
-<tr>
-<td>CPU</td>
-<td>탑재된 CPU 코어 수</td>
-</tr>
-<tr>
-<td>메모리</td>
-<td>탑재된 메모리 (GB)</td>
-</tr>
-<tr>
-<td>가속기</td>
-<td>종류 및 수량 (Accelerator 노드인 경우)</td>
-</tr>
-<tr>
-<td>스토리지</td>
-<td>탑재된 스토리지 (GB)</td>
-</tr>
-</tbody>
-</table>
-</div>
-<h3 id="실행-중인-pods">실행 중인 Pods</h3>
-<p>해당 노드에서 현재 실행 중인 Pod 목록을 확인할 수 있습니다.</p>
-<h3 id="노드-진단">노드 진단</h3>
-<p>Kubernetes 노드 상태 조건을 실시간으로 확인합니다. 각 항목이 <strong>정상</strong>이면 녹색으로 표시되고, 문제가 있으면 경고로 표시됩니다.</p>
-<div class="table-wrapper scrollbar overflow-hidden">
-<table class="comfortable">
-<thead>
-<tr>
-<th>진단 항목</th>
-<th>의미</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>NetworkUnavailable</strong></td>
-<td>네트워크 불가, CNI 플러그인 문제 등</td>
-</tr>
-<tr>
-<td><strong>MemoryPressure</strong></td>
-<td>메모리 부족, OOM 발생 가능성</td>
-</tr>
-<tr>
-<td><strong>DiskPressure</strong></td>
-<td>디스크 부족, 사용량이 임계값 초과</td>
-</tr>
-<tr>
-<td><strong>PIDPressure</strong></td>
-<td>프로세스 수 제한 도달, 더 이상 PID를 만들 수 없음</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="flex mb-6">
-    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
-    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
-        <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
-                <g fill="currentColor"><g>
-                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
-                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
-                </g></g>
-            </svg>
-        </div>
-        <div class="pr-5 ml-3 w-full">
-            <h5>진단 항목에 이상이 있는 경우</h5>
-<p>해당 노드에서 새로운 Pod 스케줄링이 차단되거나 기존 Pod가 불안정해질 수 있습니다. 즉시 원인을 파악하고 조치하세요.</p>
-        </div>
-    </div>
-</div>
-<h3 id="스케줄러-제외">스케줄러 제외</h3>
-<p>노드 상세 모달 하단의 <strong>스케줄러 제외</strong> 버튼을 클릭하면 해당 노드를 Drained 상태로 전환합니다.</p>
+<h2 id="다음-단계">다음 단계</h2>
 <ul>
-<li>Drained 상태의 노드에는 새로운 Pod가 배치되지 않습니다.</li>
-<li>기존에 실행 중인 Pod는 계속 동작합니다.</li>
-<li>하드웨어 유지보수나 드라이버 업데이트가 필요할 때 활용합니다.</li>
+<li><a href="../../user-guide/container/">컨테이너 관리</a> — 컨테이너 상세 기능</li>
+<li><a href="../../user-guide/storage/">스토리지 관리</a> — 스토리지 관리</li>
+<li><a href="../../user-guide/image/">이미지 관리</a> — 커스텀 이미지 등록</li>
 </ul>
 
                 
@@ -403,20 +273,20 @@
             
                 <nav id="retype-nextprev" class="print:hidden flex mt-14">
                     <div class="w-1/2">
-                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../admin-guide/registry-management/">
+                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../getting-started/prerequisites/">
                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                             <span>
                                 <span class="block text-xs font-normal text-base-text-muted">Previous</span>
-                                <span class="block mt-1">레포지토리 관리</span>
+                                <span class="block mt-1">Prerequisites</span>
                             </span>
                         </a>
                     </div>
             
                     <div class="w-1/2">
-                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../admin-guide/cluster-monitoring/">
+                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../getting-started/admin-setup/">
                             <span>
                                 <span class="block text-xs font-normal text-right text-base-text-muted">Next</span>
-                                <span class="block mt-1">클러스터 모니터링</span>
+                                <span class="block mt-1">관리자 초기 설정</span>
                             </span>
                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                         </a>
@@ -460,6 +330,6 @@
 
     <div id="retype-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "클러스터 대시보드", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "사용자 빠른 시작", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
