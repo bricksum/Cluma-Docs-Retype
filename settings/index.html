@@ -11,26 +11,26 @@
     <meta name="generator" content="Retype 4.4.0">
 
     <!-- Primary Meta Tags -->
-    <title>Getting Started</title>
-    <meta name="title" content="Getting Started">
-    <meta name="description" content="Cluma를 처음 사용하는 분을 위한 시작 가이드입니다.">
+    <title>설정</title>
+    <meta name="title" content="설정">
+    <meta name="description" content="프로필 정보, 비밀번호, SSH Key를 관리합니다.">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://bricksum.github.io/Cluma-Docs-Retype/getting-started/">
+    <link rel="canonical" href="https://bricksum.github.io/Cluma-Docs-Retype/settings/">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://bricksum.github.io/Cluma-Docs-Retype/getting-started/">
-    <meta property="og:title" content="Getting Started">
-    <meta property="og:description" content="Cluma를 처음 사용하는 분을 위한 시작 가이드입니다.">
+    <meta property="og:url" content="https://bricksum.github.io/Cluma-Docs-Retype/settings/">
+    <meta property="og:title" content="설정">
+    <meta property="og:description" content="프로필 정보, 비밀번호, SSH Key를 관리합니다.">
     <meta property="og:site_name" content="">
     <meta property="og:locale" content="en_US">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://bricksum.github.io/Cluma-Docs-Retype/getting-started/">
-    <meta name="twitter:title" content="Getting Started">
-    <meta name="twitter:description" content="Cluma를 처음 사용하는 분을 위한 시작 가이드입니다.">
+    <meta name="twitter:url" content="https://bricksum.github.io/Cluma-Docs-Retype/settings/">
+    <meta name="twitter:title" content="설정">
+    <meta name="twitter:description" content="프로필 정보, 비밀번호, SSH Key를 관리합니다.">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
@@ -154,20 +154,74 @@
                 <!-- Rendered if sidebar right is enabled -->
                 <div id="retype-sidebar-right-toggle"></div>
                 <!-- Page content  -->
-<h1 id="getting-started">Getting Started</h1>
-<p>Cluma를 처음 사용하는 분을 위한 시작 가이드입니다.</p>
+<h1 id="설정">설정</h1>
+<p>프로필 정보, 비밀번호, SSH Key를 관리합니다.</p>
 <hr>
-<h2 id="역할별-시작-가이드">역할별 시작 가이드</h2>
-<h3 id="일반-사용자">일반 사용자</h3>
-<p>그룹에 배정된 리소스 범위 안에서 컨테이너를 생성하고 GPU 개발 환경을 사용합니다.</p>
-<p>→ <a href="quickstart/">사용자 빠른 시작</a></p>
-<h3 id="관리자">관리자</h3>
-<p>사용자 계정을 만들고, 그룹에 리소스 한도를 설정하고, 레포지토리를 등록합니다.</p>
-<p>→ <a href="admin-setup/">관리자 초기 설정</a></p>
+<h2 id="프로필-정보">프로필 정보</h2>
+<p>이름과 이메일을 확인하고 수정할 수 있습니다.</p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>항목</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>이름</td>
+<td>플랫폼 내 표시 이름</td>
+</tr>
+<tr>
+<td>이메일</td>
+<td>계정 이메일 주소</td>
+</tr>
+<tr>
+<td>소속 그룹</td>
+<td>현재 소속된 그룹 (변경 불가, 관리자 권한 필요)</td>
+</tr>
+</tbody>
+</table>
+</div>
 <hr>
-<h2 id="사전-요구사항">사전 요구사항</h2>
-<p>Cluma를 클러스터에 배포하려면 Kubernetes 환경과 필수 도구가 필요합니다.</p>
-<p>→ <a href="prerequisites/">사전 요구사항</a></p>
+<h2 id="비밀번호-변경">비밀번호 변경</h2>
+<p>새 비밀번호를 입력하고 확인란에 동일하게 입력한 뒤 <strong>저장</strong> 버튼을 클릭합니다.</p>
+<hr>
+<h2 id="ssh-key-관리">SSH Key 관리</h2>
+<p>SSH Key를 등록하면 컨테이너에 SSH로 안전하게 접속할 수 있습니다.</p>
+<h3 id="ssh-key-등록">SSH Key 등록</h3>
+<p>사이드바 하단 <strong>설정</strong> → <strong>SSH Key 추가</strong> 버튼을 클릭합니다.</p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>항목</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SSH Key 이름</td>
+<td>Key를 식별하는 이름 (예: My Laptop Key)</td>
+</tr>
+<tr>
+<td>SSH 공개키</td>
+<td>직접 입력 또는 파일 업로드</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li><p><strong>직접 입력</strong> : 공개키 텍스트를 붙여넣습니다. (<code translate="no" v-pre>ssh-rsa AAAA...</code> 형식)</p>
+</li>
+<li><p><strong>파일 업로드</strong> : <code translate="no" v-pre>.pub</code> 파일을 선택하여 업로드합니다.</p>
+</li>
+</ul>
+<h3 id="ssh-key-삭제">SSH Key 삭제</h3>
+<p>등록된 Key 목록에서 삭제 아이콘을 클릭합니다.</p>
+<blockquote>
+<p>삭제된 SSH Key는 해당 Key로 접속 중인 컨테이너에 즉시 반영됩니다.</p>
+</blockquote>
 
                 
                 <!-- Required only on API pages -->
@@ -177,20 +231,20 @@
             
                 <nav id="retype-nextprev" class="print:hidden flex mt-14">
                     <div class="w-1/2">
-                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../">
+                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../user-guide/image/">
                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                             <span>
                                 <span class="block text-xs font-normal text-base-text-muted">Previous</span>
-                                <span class="block mt-1">Home</span>
+                                <span class="block mt-1">이미지</span>
                             </span>
                         </a>
                     </div>
             
                     <div class="w-1/2">
-                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../getting-started/prerequisites/">
+                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../troubleshooting/">
                             <span>
                                 <span class="block text-xs font-normal text-right text-base-text-muted">Next</span>
-                                <span class="block mt-1">Prerequisites</span>
+                                <span class="block mt-1">Troubleshooting</span>
                             </span>
                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                         </a>
@@ -234,6 +288,6 @@
 
     <div id="retype-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Getting Started", level: 1, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Settings", level: 1, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
