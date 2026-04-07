@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
     <meta name="turbo-root" content="/Cluma-Docs-Retype">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.4.0.828863288865">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.4.0.828863542789">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 4.4.0">
@@ -34,11 +34,11 @@
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../../resources/css/retype.css?v=4.4.0.828863288865" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.4.0.828863542789" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.4.0.828863288865" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.4.0.828863542789" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=4.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.4.0.828863288865" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.4.0.828863542789" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -263,7 +263,7 @@ Kubernetes PVC(Persistent Volume Claim) 기반으로 동작합니다.</p>
 <h2 id="이미지-image">이미지 (Image)</h2>
 <p>컨테이너 실행에 사용할 Docker 이미지입니다.</p>
 <ul>
-<li>관리자가 등록한 <strong>Private Registry</strong>에서 이미지를 탐색하고 선택할 수 있습니다.</li>
+<li>관리자가 등록한 <strong>레포지토리</strong>에서 이미지를 탐색하고 선택할 수 있습니다.</li>
 <li>퍼블릭 이미지 주소를 직접 입력할 수도 있습니다.</li>
 <li>일반 사용자도 커스텀 이미지를 직접 등록하고 관리할 수 있습니다.</li>
 </ul>
@@ -273,7 +273,11 @@ Kubernetes PVC(Persistent Volume Claim) 기반으로 동작합니다.</p>
 GPU 자원을 효율적으로 활용할 때 사용합니다.</p>
 <hr>
 <h2 id="다음-단계">다음 단계</h2>
-<p>개념 이해가 완료되면 <a href="../../user-guide/">사용자 가이드</a>에서 실제 사용 방법을 확인하세요.</p>
+<ul>
+<li><a href="../prerequisites/">사전 요구사항</a> — 클러스터 배포 전 필요한 환경 조건</li>
+<li><a href="../quickstart/">사용자 빠른 시작</a> — 컨테이너 생성까지 빠르게 시작하기</li>
+<li><a href="../admin-setup/">관리자 초기 설정</a> — 사용자/그룹 설정 및 레포지토리 등록</li>
+</ul>
 
                 
                 <!-- Required only on API pages -->
