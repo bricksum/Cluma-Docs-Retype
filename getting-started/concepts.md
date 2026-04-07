@@ -1,7 +1,7 @@
 ---
 label: Concepts
 icon: book
-order: 90
+order: 95
 ---
 
 # 핵심 개념

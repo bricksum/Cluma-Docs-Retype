@@ -16,7 +16,6 @@ Cluma는 온프레미스 GPU 클러스터를 쉽게 관리하고,
 
 ### 계정 및 접근 관리
 
-- JWT 기반 로그인/로그아웃 (Access Token + Refresh Token)
 - 역할 기반 접근 제어 : 관리자 / 일반 사용자 권한 분리
 - 그룹 단위 리소스 할당 및 Kubernetes namespace 자동 생성
 - SSH Key 등록 및 관리 (직접 입력 / 파일 업로드)

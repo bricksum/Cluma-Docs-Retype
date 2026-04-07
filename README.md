@@ -14,12 +14,10 @@ CLUMA-DOCS-RETYPE/
 │
 ├── getting-started/
 │   ├── index.md                      # 설치 개요 및 빠른 시작 가이드
+│   ├── concepts.md                   # 핵심 개념 (유저/관리자/그룹/컨테이너/스토리지)
 │   ├── prerequisites.md              # 사전 요구사항 (K8s 버전, StorageClass, GPU 드라이버 등)
 │   ├── quickstart.md                 # 사용자 빠른 시작
 │   └── admin-setup.md               # 관리자 초기 설정
-│
-├── concepts/
-│   └── index.md                      # 핵심 개념 (유저/관리자/그룹/컨테이너/스토리지)
 │
 ├── user-guide/
 │   ├── index.md                      # 사용자 가이드 개요
@@ -36,6 +34,9 @@ CLUMA-DOCS-RETYPE/
 │   ├── registry-management.md        # 컨테이너 이미지 레지스트리 등록 및 관리
 │   ├── cluster-dashboard.md          # 클러스터 대시보드
 │   └── cluster-monitoring.md        # 클러스터 모니터링
+│
+├── settings/
+│   └── index.md                      # 프로필 정보, 비밀번호 변경, SSH Key 관리
 │
 └── troubleshooting/
     └── index.md                      # 자주 발생하는 오류 및 해결 방법 (Pending, GPU 미인식 등)
