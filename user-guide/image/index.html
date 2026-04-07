@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
     <meta name="turbo-root" content="/Cluma-Docs-Retype">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.4.0.828856006957">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.4.0.828862157413">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 4.4.0">
@@ -13,7 +13,7 @@
     <!-- Primary Meta Tags -->
     <title>이미지</title>
     <meta name="title" content="이미지">
-    <meta name="description" content="커스텀 이미지 등록 및 레지스트리 탐색 방법을 설명합니다.">
+    <meta name="description" content="커스텀 이미지 등록 및 레포지토리 탐색 방법을 설명합니다.">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://bricksum.github.io/Cluma-Docs-Retype/user-guide/image/">
@@ -22,7 +22,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://bricksum.github.io/Cluma-Docs-Retype/user-guide/image/">
     <meta property="og:title" content="이미지">
-    <meta property="og:description" content="커스텀 이미지 등록 및 레지스트리 탐색 방법을 설명합니다.">
+    <meta property="og:description" content="커스텀 이미지 등록 및 레포지토리 탐색 방법을 설명합니다.">
     <meta property="og:site_name" content="">
     <meta property="og:locale" content="en_US">
 
@@ -30,15 +30,15 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://bricksum.github.io/Cluma-Docs-Retype/user-guide/image/">
     <meta name="twitter:title" content="이미지">
-    <meta name="twitter:description" content="커스텀 이미지 등록 및 레지스트리 탐색 방법을 설명합니다.">
+    <meta name="twitter:description" content="커스텀 이미지 등록 및 레포지토리 탐색 방법을 설명합니다.">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../../resources/css/retype.css?v=4.4.0.828856006957" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.4.0.828862157413" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.4.0.828856006957" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.4.0.828862157413" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=4.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.4.0.828856006957" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.4.0.828862157413" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -155,7 +155,7 @@
                 <div id="retype-sidebar-right-toggle"></div>
                 <!-- Page content  -->
 <h1 id="이미지">이미지</h1>
-<p>커스텀 이미지 등록 및 레지스트리 탐색 방법을 설명합니다.</p>
+<p>커스텀 이미지 등록 및 레포지토리 탐색 방법을 설명합니다.</p>
 <hr>
 <h2 id="이미지-유형">이미지 유형</h2>
 <p>Cluma에서 컨테이너 생성 시 사용할 수 있는 이미지는 세 가지입니다.</p>
@@ -169,12 +169,12 @@
 </thead>
 <tbody>
 <tr>
-<td>Registry 이미지</td>
-<td>관리자가 등록한 Private Registry에서 탐색하여 선택합니다.</td>
+<td>레포지토리 이미지</td>
+<td>관리자가 등록한 레포지토리에서 탐색하여 선택합니다.</td>
 </tr>
 <tr>
 <td>퍼블릭 이미지</td>
-<td>Docker Hub 등 퍼블릭 Registry의 이미지 주소를 직접 입력합니다.</td>
+<td>Docker Hub 등 퍼블릭 이미지 주소를 직접 입력합니다.</td>
 </tr>
 <tr>
 <td>커스텀 이미지</td>
@@ -184,16 +184,16 @@
 </table>
 </div>
 <hr>
-<h2 id="registry-이미지-탐색">Registry 이미지 탐색</h2>
-<p>컨테이너 생성 1단계에서 Registry를 선택하면 등록된 이미지 목록을 탐색할 수 있습니다.</p>
+<h2 id="레포지토리-이미지-탐색">레포지토리 이미지 탐색</h2>
+<p>컨테이너 생성 1단계에서 레포지토리를 선택하면 등록된 이미지 목록을 탐색할 수 있습니다.</p>
 <ol>
-<li>이미지 선택 화면에서 Registry를 선택합니다.</li>
+<li>이미지 선택 화면에서 레포지토리를 선택합니다.</li>
 <li>이미지 이름으로 검색하거나 목록에서 선택합니다.</li>
 <li>태그를 선택합니다.</li>
 </ol>
 <hr>
 <h2 id="퍼블릭-이미지-직접-입력">퍼블릭 이미지 직접 입력</h2>
-<p>Registry에 등록되지 않은 퍼블릭 이미지는 주소를 직접 입력하여 사용할 수 있습니다.</p>
+<p>레포지토리에 등록되지 않은 퍼블릭 이미지는 주소를 직접 입력하여 사용할 수 있습니다.</p>
 <div id="퍼블릭-이미지-직접-입력-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none"># 예시
 pytorch/pytorch:2.1.0-cuda11.8-cudnn8-runtime
@@ -223,7 +223,7 @@ nvcr.io/nvidia/tensorflow:23.10-tf2-py3</code></pre>
 </tr>
 <tr>
 <td>이미지 주소</td>
-<td>Registry URL 포함 전체 이미지 경로</td>
+<td>레포지토리 URL 포함 전체 이미지 경로</td>
 </tr>
 <tr>
 <td>태그</td>
