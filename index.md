@@ -7,10 +7,25 @@ icon: home
 
 Cluma는 온프레미스 GPU 클러스터를 쉽게 관리하고,
 인프라 운영자와 AI/ML 엔지니어가 빠르게 컨테이너 환경을 생성할 수 있는 플랫폼입니다.
+---
+
+## 문서 목차
+
+| 섹션 | 설명 |
+|------|------|
+| [Getting Started](./getting-started/index.md) | 사전 요구사항, 핵심 개념, 빠른 시작 가이드 |
+| [User Guide](./user-guide/index.md) | 컨테이너, 스토리지, 이미지 관리 방법 |
+| [Admin Guide](./admin-guide/index.md) | 사용자/그룹 관리, 클러스터 운영 |
+| [Settings](./settings/index.md) | 프로필, 비밀번호, SSH Key 관리 |
+| [Troubleshooting](./troubleshooting/index.md) | 자주 발생하는 오류 및 해결 방법 |
+
+---
 
 ## 대상 사용자
 - 온프레미스 GPU 서버를 운영하는 인프라 운영자
 - 인프라 지식 없이 GPU 환경이 필요한 AI/ML 엔지니어
+
+---
 
 ## Cluma 주요 기능
 
@@ -52,6 +67,8 @@ Cluma는 온프레미스 GPU 클러스터를 쉽게 관리하고,
 - GPU 분할 사용 (MIG) : NVIDIA Multi-Instance GPU로 하나의 GPU를 여러 워크로드에 할당
 - 컨테이너 이미지 레포지토리 등록 및 관리
 
+---
+
 ## Cluma 지원 예정 기능
 
 | 기능 | 설명 |
@@ -65,5 +82,10 @@ Cluma는 온프레미스 GPU 클러스터를 쉽게 관리하고,
 | 모델 서빙 파이프라인 | 원클릭 모델 배포, A/B 테스트, 추론 오토스케일링 |
 | 에너지 효율 관리 | 전력 소비 모니터링, 탄소 발자국 리포트 |
 
+---
 
+## 다음 단계
 
+- [사전 요구사항 확인](./getting-started/prerequisites.md) — 설치 전 필요한 환경 조건
+- [핵심 개념](./getting-started/concepts.md) — 유저, 그룹, 컨테이너 등 Cluma 핵심 개념
+- [사용자 빠른 시작](./getting-started/quickstart.md) — 컨테이너 생성까지 빠르게 시작하기
