@@ -1,1 +1,5 @@
 .DS_Store
+
+# Retype build artifacts (생성물 — repo에 포함 X)
+.retype/
+retype.manifest
