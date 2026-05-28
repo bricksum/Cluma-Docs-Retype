@@ -12,7 +12,8 @@ css:
 links:
   - text: Website
     link: https://www.bricksum.com/
-    icon: home
+  - text: Release Notes
+    link: ./release-notes/
 
 footer:
-  copyright: "© 2025 Bricksum. All rights reserved."
+  copyright: "© 2026 Bricksum. All rights reserved."
