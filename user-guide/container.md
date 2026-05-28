@@ -1,6 +1,5 @@
 ---
 label: 컨테이너 관리
-icon: container
 order: 100
 ---
 

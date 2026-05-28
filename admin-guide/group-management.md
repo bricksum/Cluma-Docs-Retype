@@ -1,6 +1,5 @@
 ---
 label: 그룹 관리
-icon: people
 order: 90
 ---
 

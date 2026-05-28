@@ -1,6 +1,5 @@
 ---
 label: Home
-icon: home
 ---
 
 # Cluma 기술 문서

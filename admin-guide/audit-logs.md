@@ -1,6 +1,5 @@
 ---
 label: 감사 로그
-icon: log
 order: 65
 ---
 

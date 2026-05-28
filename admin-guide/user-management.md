@@ -1,6 +1,5 @@
 ---
 label: 사용자 관리
-icon: people
 order: 100
 ---
 

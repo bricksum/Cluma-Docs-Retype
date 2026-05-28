@@ -1,6 +1,5 @@
 ---
 label: 레포지토리 관리
-icon: package
 order: 80
 ---
 

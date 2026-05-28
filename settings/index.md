@@ -1,6 +1,5 @@
 ---
 label: Settings
-icon: gear
 order: 65
 ---
 

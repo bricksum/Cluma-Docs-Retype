@@ -1,6 +1,5 @@
 ---
 label: 핵심 개념
-icon: book
 order: 95
 ---
 

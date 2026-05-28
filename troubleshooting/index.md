@@ -1,6 +1,5 @@
 ---
 label: Troubleshooting
-icon: alert
 order: 60
 ---
 

@@ -1,6 +1,5 @@
 ---
 label: 관리자 초기 설정
-icon: shield
 order: 80
 ---
 

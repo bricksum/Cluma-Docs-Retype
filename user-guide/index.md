@@ -1,6 +1,5 @@
 ---
 label: User guide
-icon: person
 order: 70
 ---
 

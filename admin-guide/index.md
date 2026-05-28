@@ -1,6 +1,5 @@
 ---
 label: Admin guide
-icon: shield
 order: 80
 ---
 

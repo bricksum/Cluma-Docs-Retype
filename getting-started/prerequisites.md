@@ -1,6 +1,5 @@
 ---
 label: 사전 요구사항
-icon: checklist
 order: 90
 ---
 

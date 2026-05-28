@@ -1,6 +1,5 @@
 ---
 label: Release Notes
-icon: rocket
 order: 50
 ---
 

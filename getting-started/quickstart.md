@@ -1,6 +1,5 @@
 ---
 label: 사용자 빠른 시작
-icon: person
 order: 85
 ---
 

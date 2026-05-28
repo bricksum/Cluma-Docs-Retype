@@ -1,6 +1,5 @@
 ---
 label: 클러스터
-icon: server
 order: 70
 ---
 
