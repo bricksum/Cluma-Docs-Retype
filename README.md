@@ -10,7 +10,7 @@
 
 ```
 CLUMA-DOCS-RETYPE/
-├── index.md                          # 홈 (Cluma 소개 + 주요 기능 + 곧 들어올 기능)
+├── index.md                          # 홈 (Cluma 소개 + 주요 기능)
 │
 ├── getting-started/
 │   ├── index.md                      # 시작 가이드 진입
