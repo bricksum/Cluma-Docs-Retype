@@ -11,30 +11,30 @@
     <meta name="generator" content="Retype 4.6.0">
 
     <!-- Primary Meta Tags -->
-    <title>사용자 빠른 시작</title>
-    <meta name="title" content="사용자 빠른 시작">
-    <meta name="description" content="Cluma를 처음 쓰시는 분은 아래 순서대로 따라가시면 됩니다.">
+    <title>클러스터</title>
+    <meta name="title" content="클러스터">
+    <meta name="description" content="노드 상태, 자원 분포, 사용량 추이, 외부 모니터링, 스토리지 현황을 한 화면에서 살펴봅니다.">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://bricksum.github.io/Cluma-Docs-Retype/getting-started/quickstart/">
+    <link rel="canonical" href="https://bricksum.github.io/Cluma-Docs-Retype/admin-guide/cluster/">
     <link rel="sitemap" type="application/xml" title="Sitemap" href="https://bricksum.github.io/Cluma-Docs-Retype/sitemap.xml">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://bricksum.github.io/Cluma-Docs-Retype/getting-started/quickstart/">
-    <meta property="og:title" content="사용자 빠른 시작">
-    <meta property="og:description" content="Cluma를 처음 쓰시는 분은 아래 순서대로 따라가시면 됩니다.">
+    <meta property="og:url" content="https://bricksum.github.io/Cluma-Docs-Retype/admin-guide/cluster/">
+    <meta property="og:title" content="클러스터">
+    <meta property="og:description" content="노드 상태, 자원 분포, 사용량 추이, 외부 모니터링, 스토리지 현황을 한 화면에서 살펴봅니다.">
     <meta property="og:site_name" content="">
     <meta property="og:locale" content="en_US">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://bricksum.github.io/Cluma-Docs-Retype/getting-started/quickstart/">
-    <meta name="twitter:title" content="사용자 빠른 시작">
-    <meta name="twitter:description" content="Cluma를 처음 쓰시는 분은 아래 순서대로 따라가시면 됩니다.">
+    <meta name="twitter:url" content="https://bricksum.github.io/Cluma-Docs-Retype/admin-guide/cluster/">
+    <meta name="twitter:title" content="클러스터">
+    <meta name="twitter:description" content="노드 상태, 자원 분포, 사용량 추이, 외부 모니터링, 스토리지 현황을 한 화면에서 살펴봅니다.">
 
     <!-- Alternate Markdown -->
-    <link rel="alternate" type="text/markdown" href="https://bricksum.github.io/Cluma-Docs-Retype/getting-started/quickstart.md">
+    <link rel="alternate" type="text/markdown" href="https://bricksum.github.io/Cluma-Docs-Retype/admin-guide/cluster.md">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
@@ -156,138 +156,235 @@
                 <doc-page-actions></doc-page-actions>
 
                 <!-- Page content  -->
-<h1 id="사용자-빠른-시작">사용자 빠른 시작</h1>
-<p>Cluma를 처음 쓰시는 분은 아래 순서대로 따라가시면 됩니다.</p>
+<h1 id="클러스터">클러스터</h1>
+<p>노드 상태, 자원 분포, 사용량 추이, 외부 모니터링, 스토리지 현황을 한 화면에서 살펴봅니다.</p>
+<p>관리자 메뉴 → <strong>클러스터</strong> 로 들어갑니다. 한 페이지 안에 다섯 개 탭이 들어 있습니다.</p>
 <hr>
-<h2 id="1-로그인">1. 로그인</h2>
-<p>관리자에게 받은 계정으로 로그인합니다.</p>
-<p>들어온 뒤 화면 위쪽 <strong>그룹 선택</strong> 메뉴에 본인 그룹이 떠 있는지 확인합니다. 비어 있다면 관리자에게 그룹 배정을 부탁합니다.</p>
-<hr>
-<h2 id="2-홈-화면-살펴보기">2. 홈 화면 살펴보기</h2>
-<p>로그인 후 처음 보이는 화면이 <strong>클러스터 예약</strong> 화면입니다. 두 가지를 동시에 보여 줍니다.</p>
-<ul>
-<li><strong>위쪽 요약 카드 4개</strong>: 내 컨테이너 수 / 내가 쓰고 있는 자원 / 우리 그룹의 가용 GPU / 클러스터 점유율</li>
-<li><strong>아래쪽 노드 목록</strong>: 클러스터 안의 노드들이 카드로 보입니다. 컨테이너를 만들 노드를 여기서 고릅니다.</li>
-</ul>
-<hr>
-<h2 id="3-스토리지-만들기-선택">3. 스토리지 만들기 (선택)</h2>
-<p>학습용 데이터셋이나 모델 파일처럼 컨테이너가 사라져도 남겨야 할 자료는 스토리지에 보관합니다.</p>
-<ol>
-<li>위쪽 메뉴 → <strong>스토리지</strong> → <strong>스토리지 생성</strong></li>
-<li>이름, 용량(GB), 스토리지 유형을 정하고 만듭니다.</li>
-</ol>
-<p>자세한 내용은 <a href="../../user-guide/storage/">스토리지 관리</a>를 참고합니다.</p>
-<div class="flex mb-6 note">
-    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
-    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
-        <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
-                <g fill="currentColor"><g>
-                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
-                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
-                    <path fill="none" d="M0 0h24v24H0z"></path>
-                </g></g>
-            </svg>
-        </div>
-        <div class="pr-5 ml-3 w-full">
-            <h5>note 스토리지 없이 시작해도 괜찮습니다</h5>
-<p>컨테이너 만들기 안에서도 새 스토리지를 만들 수 있습니다. 처음에는 컨테이너부터 만들어 보세요.</p>
-        </div>
-    </div>
-</div>
-<hr>
-<h2 id="4-컨테이너-만들기">4. 컨테이너 만들기</h2>
-<p>컨테이너 만들기는 홈 화면의 <strong>노드 카드를 클릭하는 것</strong> 으로만 시작합니다. 위쪽 메뉴의 &quot;컨테이너&quot; 페이지에는 만들기 버튼이 없습니다.</p>
-<p>노드를 누르면 <strong>컨테이너 시작</strong> 창이 열립니다. 들어가는 길이 두 가지입니다.</p>
-<h3 id="4-a-템플릿으로-시작-가장-빠른-길">4-A. 템플릿으로 시작 (가장 빠른 길)</h3>
-<p>저장된 템플릿이 있으면 창 위쪽에 카드로 보입니다.</p>
-<ol>
-<li>원하는 카드를 누릅니다.</li>
-<li>확인 창에서 컨테이너 이름을 적습니다.</li>
-<li><strong>생성</strong> 버튼을 누르면 바로 만들어집니다.</li>
-</ol>
-<p>이미지 · 인스턴스 · 환경 변수 · 스토리지 마운트 · 공유 메모리 설정이 템플릿에서 그대로 옮겨집니다.</p>
-<h3 id="4-b-새로-시작-직접-고르기">4-B. 새로 시작 (직접 고르기)</h3>
-<p>템플릿이 없거나 다른 설정이 필요하면 <strong>또는 새로 시작</strong> 영역에서 인스턴스를 직접 고릅니다.</p>
-<p><strong>Step 1 — 인스턴스 고르기</strong></p>
-<p>CPU · 메모리 · GPU 묶음에서 하나를 골라 <strong>다음</strong>을 누릅니다. 그 자원이 본인 앞으로 <strong>5분간 잠시 잡혀</strong> 있습니다. 그 시간 안에 Step 2를 끝내야 합니다.</p>
-<p><strong>Step 2 — 5단계 옵션 설정</strong></p>
-<retype-table copy-text="| 단계 | 무엇을 |
-|------|--------|
-| 기본 정보 | 컨테이너 이름, 베이스 이미지 |
-| 스토리지 | 마운트할 스토리지 (선택) |
-| 운영 옵션 | 사용 시간, 공유 메모리, 환경 변수, NUMA 옵션 |
-| 템플릿 | 이 설정을 템플릿으로도 저장할지 (선택) |
-| 확인 | 설정 다시 보기 → **생성** |">
+<h2 id="페이지-구성">페이지 구성</h2>
+<retype-table copy-text="| 탭 | 어떤 내용 |
+|----|----------|
+| 상태 | 노드 목록 · 진단 · 작업 배치 제외 |
+| 분포 | 가속기가 어디에 어떻게 쓰이고 있는지 |
+| 사용량 | CPU · 메모리 · 가속기 사용률 카드 |
+| 모니터링 | Grafana 그래프 새 탭으로 열기 |
+| 스토리지 | 저장소 유형별 용량 · 사용량 |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
 <tr>
-<th>단계</th>
-<th>무엇을</th>
+<th>탭</th>
+<th>어떤 내용</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>기본 정보</td>
-<td>컨테이너 이름, 베이스 이미지</td>
+<td>상태</td>
+<td>노드 목록 · 진단 · 작업 배치 제외</td>
+</tr>
+<tr>
+<td>분포</td>
+<td>가속기가 어디에 어떻게 쓰이고 있는지</td>
+</tr>
+<tr>
+<td>사용량</td>
+<td>CPU · 메모리 · 가속기 사용률 카드</td>
+</tr>
+<tr>
+<td>모니터링</td>
+<td>Grafana 그래프 새 탭으로 열기</td>
 </tr>
 <tr>
 <td>스토리지</td>
-<td>마운트할 스토리지 (선택)</td>
-</tr>
-<tr>
-<td>운영 옵션</td>
-<td>사용 시간, 공유 메모리, 환경 변수, NUMA 옵션</td>
-</tr>
-<tr>
-<td>템플릿</td>
-<td>이 설정을 템플릿으로도 저장할지 (선택)</td>
-</tr>
-<tr>
-<td>확인</td>
-<td>설정 다시 보기 → <strong>생성</strong></td>
+<td>저장소 유형별 용량 · 사용량</td>
 </tr>
 </tbody>
 </table>
 </div>
 </retype-table>
-<div class="flex mb-6 note">
-    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
-    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
-        <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
-                <g fill="currentColor"><g>
-                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
-                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
-                    <path fill="none" d="M0 0h24v24H0z"></path>
-                </g></g>
-            </svg>
-        </div>
-        <div class="pr-5 ml-3 w-full">
-            <h5>note 접속 포트는 알아서 열립니다</h5>
-<p>VS Code(8443) · SSH(22) · JupyterLab(8888) 포트가 자동으로 준비됩니다. 사용자가 설정할 게 없습니다.</p>
-        </div>
-    </div>
+<p>위쪽의 <strong>마지막 업데이트 / 자동 새로고침 / 새로고침</strong> 컨트롤은 모든 탭에 공통으로 적용됩니다.</p>
+<hr>
+<h2 id="상태-탭">상태 탭</h2>
+<h3 id="요약-카드">요약 카드</h3>
+<retype-table copy-text="| 카드 | 어떤 값 |
+|------|---------|
+| Ready 노드 | 정상 동작 중인 노드 수 |
+| Drained 노드 | 새 작업을 잠시 안 받는 노드 수 |
+| 전체 Pod | 클러스터의 전체 Pod 수 |
+| 실행 중 Pod | 정상 실행 중인 Pod 수 |
+| Pending Pod | 어디서 띄울지 기다리는 Pod 수 |">
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>카드</th>
+<th>어떤 값</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ready 노드</td>
+<td>정상 동작 중인 노드 수</td>
+</tr>
+<tr>
+<td>Drained 노드</td>
+<td>새 작업을 잠시 안 받는 노드 수</td>
+</tr>
+<tr>
+<td>전체 Pod</td>
+<td>클러스터의 전체 Pod 수</td>
+</tr>
+<tr>
+<td>실행 중 Pod</td>
+<td>정상 실행 중인 Pod 수</td>
+</tr>
+<tr>
+<td>Pending Pod</td>
+<td>어디서 띄울지 기다리는 Pod 수</td>
+</tr>
+</tbody>
+</table>
 </div>
-<div class="flex mb-6 note">
-    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
-    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
-        <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
-                <g fill="currentColor"><g>
-                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
-                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
-                    <path fill="none" d="M0 0h24v24H0z"></path>
-                </g></g>
-            </svg>
-        </div>
-        <div class="pr-5 ml-3 w-full">
-            <h5>note 비밀번호도 자동으로 받습니다</h5>
-<p>컨테이너마다 비밀번호가 자동으로 만들어집니다. SSH · VS Code · Jupyter 모두 이 한 비밀번호로 들어갑니다. 상세 화면에서 확인할 수 있습니다.</p>
-        </div>
-    </div>
+</retype-table>
+<h3 id="노드-목록">노드 목록</h3>
+<p>요약 카드 아래에 <strong>Ready 노드</strong> 와 <strong>Drained 노드</strong> 가 나뉘어 보입니다.</p>
+<p><strong>보기 방식 — 그리드 / 리스트</strong></p>
+<retype-table copy-text="| 모드 | 어떤 식 |
+|------|---------|
+| 그리드 | 노드를 카드로. 가속기 시각화가 함께 보임 |
+| 리스트 | 노드를 줄로. 많은 노드를 한눈에 |">
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>모드</th>
+<th>어떤 식</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>그리드</td>
+<td>노드를 카드로. 가속기 시각화가 함께 보임</td>
+</tr>
+<tr>
+<td>리스트</td>
+<td>노드를 줄로. 많은 노드를 한눈에</td>
+</tr>
+</tbody>
+</table>
 </div>
+</retype-table>
+<p><strong>가속기 필터</strong></p>
+<retype-table copy-text="| 옵션 | 어떤 식 |
+|------|---------|
+| 전체 디바이스 | 모든 노드 표시 |
+| 특정 가속기 | 그 가속기를 가진 노드만 표시 (예: NVIDIA A100) |">
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>옵션</th>
+<th>어떤 식</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>전체 디바이스</td>
+<td>모든 노드 표시</td>
+</tr>
+<tr>
+<td>특정 가속기</td>
+<td>그 가속기를 가진 노드만 표시 (예: NVIDIA A100)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</retype-table>
+<h3 id="노드-상세">노드 상세</h3>
+<p>카드 또는 줄을 누르면 상세 창이 열립니다.</p>
+<p><strong>노드 정보</strong></p>
+<retype-table copy-text="| 항목 | 어떤 값 |
+|------|---------|
+| 상태 배지 | Ready / NotReady / SchedulingDisabled |
+| 역할 배지 | Control Plane / Data Plane |
+| CPU | 가진 코어 수 |
+| 메모리 | 가진 메모리 (GB) |
+| 가속기 | 종류와 수 |
+| 스토리지 | 가진 디스크 (GB) |">
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>항목</th>
+<th>어떤 값</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>상태 배지</td>
+<td>Ready / NotReady / SchedulingDisabled</td>
+</tr>
+<tr>
+<td>역할 배지</td>
+<td>Control Plane / Data Plane</td>
+</tr>
+<tr>
+<td>CPU</td>
+<td>가진 코어 수</td>
+</tr>
+<tr>
+<td>메모리</td>
+<td>가진 메모리 (GB)</td>
+</tr>
+<tr>
+<td>가속기</td>
+<td>종류와 수</td>
+</tr>
+<tr>
+<td>스토리지</td>
+<td>가진 디스크 (GB)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</retype-table>
+<p><strong>실행 중인 Pod 목록</strong>: 그 노드에서 동작 중인 Pod 목록이 같이 보입니다.</p>
+<p><strong>노드 진단</strong></p>
+<retype-table copy-text="| 항목 | 의미 |
+|------|------|
+| NetworkUnavailable | 네트워크 문제 (CNI 등) |
+| MemoryPressure | 메모리가 부족해지고 있음 |
+| DiskPressure | 디스크가 부족해지고 있음 |
+| PIDPressure | 프로세스 수 한계에 가까워짐 |">
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>항목</th>
+<th>의미</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NetworkUnavailable</td>
+<td>네트워크 문제 (CNI 등)</td>
+</tr>
+<tr>
+<td>MemoryPressure</td>
+<td>메모리가 부족해지고 있음</td>
+</tr>
+<tr>
+<td>DiskPressure</td>
+<td>디스크가 부족해지고 있음</td>
+</tr>
+<tr>
+<td>PIDPressure</td>
+<td>프로세스 수 한계에 가까워짐</td>
+</tr>
+</tbody>
+</table>
+</div>
+</retype-table>
+<p>정상이면 초록색, 문제가 있으면 경고로 표시됩니다.</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
@@ -300,52 +397,314 @@
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-            <h5>GPU 노드에 CPU만 쓰는 인스턴스는 만들 수 없습니다</h5>
-<p>가속기가 달린 노드에는 GPU를 1개 이상 할당해야 합니다. CPU만 필요하다면 CPU 전용 노드를 쓰거나, GPU 인스턴스를 받아서 컨테이너 안에서 자유롭게 CPU만 써도 됩니다.</p>
+            <h5>진단에 빨간불이 켜졌다면</h5>
+<p>새 Pod 배치가 막히거나 동작 중인 Pod가 흔들릴 수 있습니다. 즉시 원인을 살펴 조치합니다.</p>
         </div>
     </div>
 </div>
+<p><strong>작업 배치 제외 (Drain)</strong></p>
+<p>상세 창 아래쪽 <strong>스케줄러 제외</strong> 버튼을 누르면 그 노드는 새 작업을 잠시 받지 않게 됩니다.</p>
+<ul>
+<li>이미 동작 중인 Pod는 그대로 살아 있습니다.</li>
+<li>하드웨어 점검, 드라이버 업데이트, 노드 정기 점검 때 씁니다.</li>
+</ul>
 <hr>
-<h2 id="5-컨테이너에-접속하기">5. 컨테이너에 접속하기</h2>
-<p>상태가 <strong>Running</strong>이 되면 컨테이너 상세 화면에서 바로 들어갈 수 있습니다.</p>
-<p>위쪽에 <strong>접속 카드 세 개</strong>가 보입니다.</p>
-<retype-table copy-text="| 카드 | 어떻게 동작 |
-|------|------------|
-| **VS Code** | 브라우저로 code-server를 엽니다. 없으면 PC에 설치된 VS Code가 SSH로 붙도록 폴백합니다. |
-| **SSH** | PC의 터미널 앱을 띄우고 SSH 명령어를 클립보드에도 복사해 둡니다. |
-| **Jupyter** | 브라우저로 JupyterLab을 엽니다. |">
+<h2 id="분포-탭">분포 탭</h2>
+<p>가속기가 어디에 어떻게 쓰이고 있는지 시각화해서 보여 줍니다.</p>
+<retype-table copy-text="| 모드 | 어떤 식 |
+|------|---------|
+| 사용유무 | 쓰임 / 안 쓰임만 단순 표시 |
+| Pod별 구분 | 각 GPU 슬롯이 어느 Pod에 가 있는지 |
+| 그룹별 구분 | 그룹별로 어느 GPU를 점유 중인지 (색 범례 포함) |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
 <tr>
-<th>카드</th>
-<th>어떻게 동작</th>
+<th>모드</th>
+<th>어떤 식</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>VS Code</strong></td>
-<td>브라우저로 code-server를 엽니다. 없으면 PC에 설치된 VS Code가 SSH로 붙도록 폴백합니다.</td>
+<td>사용유무</td>
+<td>쓰임 / 안 쓰임만 단순 표시</td>
 </tr>
 <tr>
-<td><strong>SSH</strong></td>
-<td>PC의 터미널 앱을 띄우고 SSH 명령어를 클립보드에도 복사해 둡니다.</td>
+<td>Pod별 구분</td>
+<td>각 GPU 슬롯이 어느 Pod에 가 있는지</td>
 </tr>
 <tr>
-<td><strong>Jupyter</strong></td>
-<td>브라우저로 JupyterLab을 엽니다.</td>
+<td>그룹별 구분</td>
+<td>그룹별로 어느 GPU를 점유 중인지 (색 범례 포함)</td>
 </tr>
 </tbody>
 </table>
 </div>
 </retype-table>
-<p>비밀번호를 묻는 도구라면 상세 화면의 <strong>SSH 접속 정보</strong> 영역에서 자동 발급된 비밀번호를 복사해 씁니다.</p>
+<p>그룹별 색깔 범례로 어느 팀이 어느 GPU를 쓰고 있는지 빠르게 봅니다.</p>
+<hr>
+<h2 id="사용량-탭">사용량 탭</h2>
+<p>클러스터 전체 자원이 얼마나 차 있는지 카드와 막대로 보여 줍니다.</p>
+<retype-table copy-text="| 카드 | 단위 |
+|------|------|
+| CPU | 코어 |
+| Memory | GB |
+| 가속기 종류별 | 개수 |
+| Storage | GB |">
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>카드</th>
+<th>단위</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CPU</td>
+<td>코어</td>
+</tr>
+<tr>
+<td>Memory</td>
+<td>GB</td>
+</tr>
+<tr>
+<td>가속기 종류별</td>
+<td>개수</td>
+</tr>
+<tr>
+<td>Storage</td>
+<td>GB</td>
+</tr>
+</tbody>
+</table>
+</div>
+</retype-table>
+<p>각 카드에 <strong>사용량 / 한도 / 총량</strong> 과 사용률 막대가 함께 있습니다.</p>
+<retype-table copy-text="| 범위 | 색 |
+|------|-----|
+| 0 ~ 69% | 기본 |
+| 70 ~ 89% | 노랑 |
+| 90% 이상 | 빨강 |">
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>범위</th>
+<th>색</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0 ~ 69%</td>
+<td>기본</td>
+</tr>
+<tr>
+<td>70 ~ 89%</td>
+<td>노랑</td>
+</tr>
+<tr>
+<td>90% 이상</td>
+<td>빨강</td>
+</tr>
+</tbody>
+</table>
+</div>
+</retype-table>
+<hr>
+<h2 id="모니터링-탭">모니터링 탭</h2>
+<p>시간에 따른 사용량 추이는 Grafana로 봅니다. 모니터링 탭을 누르면 새 탭에서 Grafana가 열립니다.</p>
+<p>Grafana는 Cluma와 별도로 클러스터 안 <code translate="no" v-pre>monitoring</code> 작업 공간에 떠 있어야 하고, Cluma 관리자가 그 주소를 환경변수로 설정해 둔 경우에만 열립니다.</p>
+<div class="flex mb-6 note">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5>note 탭을 눌러도 아무것도 안 열린다면</h5>
+<p>Grafana 주소가 비어 있는 상태입니다. 클러스터 배포 담당자에게 사용자 화면 빌드의 <code translate="no" v-pre>NEXT_PUBLIC_GRAFANA_URL</code> 환경변수 설정을 요청하세요.</p>
+        </div>
+    </div>
+</div>
+<h3 id="grafana에서-보이는-것">Grafana에서 보이는 것</h3>
+<retype-table copy-text="| 항목 | 어떤 그래프 |
+|------|-----------|
+| CPU 사용률 | 노드별 · 전체 |
+| 메모리 사용률 | 노드별 · 전체 |
+| GPU 사용률 | GPU 노드의 가속기 사용률 (DCGM 기반) |
+| 네트워크 I/O | 노드별 송수신 |
+| 디스크 I/O | 노드별 읽기 / 쓰기 |
+| Pod 상태 | 작업 공간별 Pod 수 · 상태 추이 |">
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>항목</th>
+<th>어떤 그래프</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CPU 사용률</td>
+<td>노드별 · 전체</td>
+</tr>
+<tr>
+<td>메모리 사용률</td>
+<td>노드별 · 전체</td>
+</tr>
+<tr>
+<td>GPU 사용률</td>
+<td>GPU 노드의 가속기 사용률 (DCGM 기반)</td>
+</tr>
+<tr>
+<td>네트워크 I/O</td>
+<td>노드별 송수신</td>
+</tr>
+<tr>
+<td>디스크 I/O</td>
+<td>노드별 읽기 / 쓰기</td>
+</tr>
+<tr>
+<td>Pod 상태</td>
+<td>작업 공간별 Pod 수 · 상태 추이</td>
+</tr>
+</tbody>
+</table>
+</div>
+</retype-table>
+<h3 id="grafana-접속-정보">Grafana 접속 정보</h3>
+<retype-table copy-text="| 항목 | 기본값 |
+|------|--------|
+| 주소 | `http://grafana.internal` |
+| 작업 공간 | `monitoring` |">
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>항목</th>
+<th>기본값</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>주소</td>
+<td><code translate="no" v-pre>http://grafana.internal</code></td>
+</tr>
+<tr>
+<td>작업 공간</td>
+<td><code translate="no" v-pre>monitoring</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+</retype-table>
+<div class="flex mb-6 note">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5>note 사내 도메인을 쓴다면</h5>
+<p><code translate="no" v-pre>grafana.internal</code> 같은 사내 도메인을 쓰는 경우, 작업 PC의 <code translate="no" v-pre>/etc/hosts</code> 에 노드 IP 매핑을 추가합니다.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-none"><code v-pre class="language-none">&lt;노드 IP&gt;  grafana.internal</code></pre>
+</doc-codeblock></div>
+        </div>
+    </div>
+</div>
+<hr>
+<h2 id="스토리지-탭">스토리지 탭</h2>
+<p>클러스터에 등록된 저장소 유형별로 용량과 사용량을 봅니다.</p>
+<retype-table copy-text="| 항목 | 어떤 값 |
+|------|---------|
+| 스토리지 유형 | NFS / Local 등 |
+| 전체 용량 | 클러스터가 인식한 총 용량 |
+| 사용량 | 현재 쓰이고 있는 양 |
+| 사용률 | 백분율 (70% 노랑 / 90% 빨강) |">
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>항목</th>
+<th>어떤 값</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>스토리지 유형</td>
+<td>NFS / Local 등</td>
+</tr>
+<tr>
+<td>전체 용량</td>
+<td>클러스터가 인식한 총 용량</td>
+</tr>
+<tr>
+<td>사용량</td>
+<td>현재 쓰이고 있는 양</td>
+</tr>
+<tr>
+<td>사용률</td>
+<td>백분율 (70% 노랑 / 90% 빨강)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</retype-table>
+<hr>
+<h2 id="사용량-탭-vs-모니터링-탭">사용량 탭 vs 모니터링 탭</h2>
+<retype-table copy-text="| 구분 | 사용량 탭 | 모니터링 탭 |
+|------|----------|------------|
+| 무엇을 | 지금 얼마나 차 있는지 | 시간에 따른 사용량 변화 |
+| 데이터 | 지금 이 순간의 스냅샷 | 과거부터 현재까지의 그래프 |
+| 도구 | Cluma 내장 | Grafana (외부 연동) |">
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>구분</th>
+<th>사용량 탭</th>
+<th>모니터링 탭</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>무엇을</td>
+<td>지금 얼마나 차 있는지</td>
+<td>시간에 따른 사용량 변화</td>
+</tr>
+<tr>
+<td>데이터</td>
+<td>지금 이 순간의 스냅샷</td>
+<td>과거부터 현재까지의 그래프</td>
+</tr>
+<tr>
+<td>도구</td>
+<td>Cluma 내장</td>
+<td>Grafana (외부 연동)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</retype-table>
 <hr>
 <h2 id="다음-단계">다음 단계</h2>
 <ul>
-<li><a href="../../user-guide/container/">컨테이너 관리</a> — 더 자세한 사용법</li>
-<li><a href="../../user-guide/storage/">스토리지 관리</a></li>
-<li><a href="../../user-guide/image/">이미지 관리</a></li>
+<li><a href="../dashboard/">관리자 대시보드</a> — 그룹별 사용량</li>
+<li><a href="../group-management/">그룹 관리</a> — 그룹별 자원 한도</li>
 </ul>
 
                 
@@ -356,20 +715,20 @@
             
                 <nav id="retype-nextprev" class="print:hidden flex mt-14">
                     <div class="w-1/2">
-                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../getting-started/prerequisites/">
+                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../admin-guide/registry-management/">
                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                             <span>
                                 <span class="block text-xs font-normal text-base-text-muted">Previous</span>
-                                <span class="block mt-1">사전 요구사항</span>
+                                <span class="block mt-1">레포지토리 관리</span>
                             </span>
                         </a>
                     </div>
             
                     <div class="w-1/2">
-                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../getting-started/admin-setup/">
+                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../admin-guide/audit-logs/">
                             <span>
                                 <span class="block text-xs font-normal text-right text-base-text-muted">Next</span>
-                                <span class="block mt-1">관리자 초기 설정</span>
+                                <span class="block mt-1">감사 로그</span>
                             </span>
                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                         </a>
@@ -413,6 +772,6 @@
 
     <div id="retype-overlay-target"></div>
 
-        <script data-cfasync="false">window.__DOCS__ = { "title": "사용자 빠른 시작", level: 2, icon: "file", hasPrism: false, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/getting-started/quickstart.md" }</script>
+        <script data-cfasync="false">window.__DOCS__ = { "title": "클러스터", level: 2, icon: "file", hasPrism: false, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/admin-guide/cluster.md" }</script>
 </body>
 </html>

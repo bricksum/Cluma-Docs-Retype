@@ -5,24 +5,25 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
     <meta name="turbo-root" content="/Cluma-Docs-Retype">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.4.0.828864097787">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.833313780376">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.4.0">
+    <meta name="generator" content="Retype 4.6.0">
 
     <!-- Primary Meta Tags -->
     <title>관리자 초기 설정</title>
     <meta name="title" content="관리자 초기 설정">
-    <meta name="description" content="사용자들이 사용할 그룹을 만들고 리소스 한도를 설정합니다. 사용자는 그룹에 배정된 한도 안에서만 컨테이너와 스토리지를 생성할 수 있습니다.">
+    <meta name="description" content="Cluma를 처음 켠 뒤 관리자가 차례대로 해 줘야 할 작업입니다.">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://bricksum.github.io/Cluma-Docs-Retype/getting-started/admin-setup/">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="https://bricksum.github.io/Cluma-Docs-Retype/sitemap.xml">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://bricksum.github.io/Cluma-Docs-Retype/getting-started/admin-setup/">
     <meta property="og:title" content="관리자 초기 설정">
-    <meta property="og:description" content="사용자들이 사용할 그룹을 만들고 리소스 한도를 설정합니다. 사용자는 그룹에 배정된 한도 안에서만 컨테이너와 스토리지를 생성할 수 있습니다.">
+    <meta property="og:description" content="Cluma를 처음 켠 뒤 관리자가 차례대로 해 줘야 할 작업입니다.">
     <meta property="og:site_name" content="">
     <meta property="og:locale" content="en_US">
 
@@ -30,15 +31,18 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://bricksum.github.io/Cluma-Docs-Retype/getting-started/admin-setup/">
     <meta name="twitter:title" content="관리자 초기 설정">
-    <meta name="twitter:description" content="사용자들이 사용할 그룹을 만들고 리소스 한도를 설정합니다. 사용자는 그룹에 배정된 한도 안에서만 컨테이너와 스토리지를 생성할 수 있습니다.">
+    <meta name="twitter:description" content="Cluma를 처음 켠 뒤 관리자가 차례대로 해 줘야 할 작업입니다.">
+
+    <!-- Alternate Markdown -->
+    <link rel="alternate" type="text/markdown" href="https://bricksum.github.io/Cluma-Docs-Retype/getting-started/admin-setup.md">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../../resources/css/retype.css?v=4.4.0.828864097787" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.6.0.833313780376" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.4.0.828864097787" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.4.0.828864097787" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.6.0.833313780376" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.6.0.833313780376" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -68,12 +72,10 @@
                 <nav id="retype-header-nav" class="hidden md:flex">
                     <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
                         <li class="mr-6">
-                            <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://www.bricksum.com/">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
-                                    <path d="M11.03 2.59a1.501 1.501 0 0 1 1.94 0l7.5 6.363a1.5 1.5 0 0 1 .53 1.144V19.5a1.5 1.5 0 0 1-1.5 1.5h-5.75a.75.75 0 0 1-.75-.75V14h-2v6.25a.75.75 0 0 1-.75.75H4.5A1.5 1.5 0 0 1 3 19.5v-9.403c0-.44.194-.859.53-1.144ZM12 3.734l-7.5 6.363V19.5h5v-6.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v6.25h5v-9.403Z"/>
-                                </svg>
-                                <span>Website</span>
-                            </a>
+                            <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://www.bricksum.com/">Website</a>
+                        </li>
+                        <li class="mr-6">
+                            <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="../../release-notes/">Release Notes</a>
                         </li>
     
                     </ul>
@@ -125,12 +127,10 @@
                         <nav>
                             <ul class="flex flex-wrap justify-center items-center">
                                 <li class="mr-6">
-                                    <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://www.bricksum.com/">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
-                                            <path d="M11.03 2.59a1.501 1.501 0 0 1 1.94 0l7.5 6.363a1.5 1.5 0 0 1 .53 1.144V19.5a1.5 1.5 0 0 1-1.5 1.5h-5.75a.75.75 0 0 1-.75-.75V14h-2v6.25a.75.75 0 0 1-.75.75H4.5A1.5 1.5 0 0 1 3 19.5v-9.403c0-.44.194-.859.53-1.144ZM12 3.734l-7.5 6.363V19.5h5v-6.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v6.25h5v-9.403Z"/>
-                                        </svg>
-                                        <span>Website</span>
-                                    </a>
+                                    <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://www.bricksum.com/">Website</a>
+                                </li>
+                                <li class="mr-6">
+                                    <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="../../release-notes/">Release Notes</a>
                                 </li>
         
                             </ul>
@@ -150,37 +150,47 @@
 <div class="flex">
     <div id="retype-main" class="min-w-0 p-4 grow md:px-16">
         <main class="relative pb-12 lg:pt-2">
-            <div class="retype-markdown" id="retype-content">
+            <div class="relative retype-markdown" id="retype-content">
                 <!-- Rendered if sidebar right is enabled -->
                 <div id="retype-sidebar-right-toggle"></div>
+                <doc-page-actions></doc-page-actions>
+
                 <!-- Page content  -->
 <h1 id="관리자-초기-설정">관리자 초기 설정</h1>
-<h2 id="1단계--그룹-생성-및-리소스-한도-설정">1단계 — 그룹 생성 및 리소스 한도 설정</h2>
-<p>사용자들이 사용할 그룹을 만들고 리소스 한도를 설정합니다. 사용자는 그룹에 배정된 한도 안에서만 컨테이너와 스토리지를 생성할 수 있습니다.</p>
+<p>Cluma를 처음 켠 뒤 관리자가 차례대로 해 줘야 할 작업입니다.</p>
+<hr>
+<h2 id="1단계--그룹-만들고-한도-정하기">1단계 — 그룹 만들고 한도 정하기</h2>
+<p>사용자들이 쓸 그룹을 먼저 만들고, 그룹마다 자원의 상한선을 정해 둡니다. 사용자는 그 한도 안에서만 컨테이너와 스토리지를 만들 수 있습니다.</p>
 <ol>
 <li>관리자 메뉴 → <strong>그룹 관리</strong> → <strong>그룹 생성</strong></li>
-<li>그룹 이름을 입력하고 리소스 한도를 설정합니다.</li>
+<li>그룹 이름을 적고 한도를 정합니다.</li>
 </ol>
+<retype-table copy-text="| 항목 | 어떤 값 |
+|------|---------|
+| CPU | 그룹 전체가 합쳐서 쓸 수 있는 최대 코어 수 |
+| 메모리 | 그룹 전체 최대 메모리 (GB) |
+| 가속기 | 가속기 종류별 최대 개수 |
+| 스토리지 | 그룹 전체 최대 스토리지 용량 (GB) |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
 <tr>
 <th>항목</th>
-<th>설명</th>
+<th>어떤 값</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>CPU</td>
-<td>그룹 전체가 사용할 수 있는 최대 CPU 코어 수</td>
+<td>그룹 전체가 합쳐서 쓸 수 있는 최대 코어 수</td>
 </tr>
 <tr>
 <td>메모리</td>
 <td>그룹 전체 최대 메모리 (GB)</td>
 </tr>
 <tr>
-<td>디바이스</td>
-<td>가속기 유형별 최대 수량</td>
+<td>가속기</td>
+<td>가속기 종류별 최대 개수</td>
 </tr>
 <tr>
 <td>스토리지</td>
@@ -189,34 +199,35 @@
 </tbody>
 </table>
 </div>
-<p>자세한 내용은 <a href="../../admin-guide/group-management/">그룹 관리</a>를 참고합니다.</p>
+</retype-table>
+<p>자세한 내용은 <a href="../../admin-guide/group-management/">그룹 관리</a>에서 확인합니다.</p>
 <hr>
-<h2 id="2단계--사용자-생성-및-그룹-배정">2단계 — 사용자 생성 및 그룹 배정</h2>
-<p>사용자 계정을 만들고 그룹에 배정합니다.</p>
+<h2 id="2단계--사용자-만들고-그룹에-넣기">2단계 — 사용자 만들고 그룹에 넣기</h2>
+<p>사용자 계정을 만들고 그룹에 넣어 줍니다.</p>
 <ol>
-<li>관리자 메뉴 → <strong>사용자 관리</strong> → <strong>사용자 생성</strong></li>
-<li>이메일, 이름, 비밀번호를 입력하고 생성합니다.</li>
-<li>생성된 사용자 상세 페이지에서 그룹을 배정합니다.</li>
+<li>관리자 메뉴 → <strong>사용자 관리</strong> → <strong>사용자 추가하기</strong></li>
+<li>이름, 이메일, 비밀번호, 역할을 적습니다.</li>
+<li>만든 사용자의 상세 화면에서 그룹을 추가합니다.</li>
 </ol>
-<p>자세한 내용은 <a href="../../admin-guide/user-management/">사용자 관리</a>를 참고합니다.</p>
+<p>자세한 내용은 <a href="../../admin-guide/user-management/">사용자 관리</a>에서 확인합니다.</p>
 <hr>
-<h2 id="3단계--레포지토리-등록-선택">3단계 — 레포지토리 등록 (선택)</h2>
-<p>컨테이너 생성 시 사용할 Private Registry를 등록합니다. 등록하지 않으면 사용자는 퍼블릭 이미지 주소를 직접 입력해야 합니다.</p>
+<h2 id="3단계--이미지-저장소-등록-선택">3단계 — 이미지 저장소 등록 (선택)</h2>
+<p>사용자가 컨테이너를 만들 때 고를 수 있도록 사내 이미지 저장소를 등록해 둡니다. 등록하지 않으면 사용자는 외부 공개 이미지 주소를 직접 입력해야 합니다.</p>
 <ol>
-<li>관리자 메뉴 → <strong>레포지토리 관리</strong> → <strong>레포지토리 등록</strong></li>
-<li>이름과 레지스트리 주소(URL)를 입력합니다.</li>
+<li>관리자 메뉴 → <strong>레포지토리 관리</strong> → <strong>+ 등록하기</strong></li>
+<li>이름과 저장소 주소를 적습니다.</li>
 </ol>
-<p>자세한 내용은 <a href="../../admin-guide/registry-management/">레포지토리 관리</a>를 참고합니다.</p>
+<p>자세한 내용은 <a href="../../admin-guide/registry-management/">레포지토리 관리</a>에서 확인합니다.</p>
 <hr>
-<h2 id="4단계--클러스터-상태-확인">4단계 — 클러스터 상태 확인</h2>
-<p>노드와 리소스가 정상적으로 연결되어 있는지 확인합니다.</p>
+<h2 id="4단계--클러스터-상태-살피기">4단계 — 클러스터 상태 살피기</h2>
+<p>노드와 자원이 잘 잡혔는지 확인합니다.</p>
 <ul>
-<li>관리자 메뉴 → <strong>클러스터 대시보드</strong>: 노드 상태(Ready/Drained), Pod 현황 확인</li>
-<li>관리자 메뉴 → <strong>관리자 대시보드</strong>: 클러스터 전체 CPU/메모리/GPU/스토리지 현황 확인</li>
+<li>관리자 메뉴 → <strong>클러스터</strong>: 노드 상태(정상 / 작업 배치 제외), Pod 현황</li>
+<li>관리자 메뉴 → <strong>관리자 대시보드</strong>: 클러스터 전체 CPU · 메모리 · GPU · 스토리지 사용 현황</li>
 </ul>
 <hr>
-<h2 id="준비-완료">준비 완료</h2>
-<p>위 단계가 완료되면 사용자들이 <a href="../quickstart/">사용자 빠른 시작</a>을 따라 컨테이너를 생성할 수 있습니다.</p>
+<h2 id="끝">끝</h2>
+<p>여기까지 끝나면 사용자들이 <a href="../quickstart/">사용자 빠른 시작</a>을 따라 컨테이너를 만들 수 있습니다.</p>
 
                 
                 <!-- Required only on API pages -->
@@ -254,7 +265,7 @@
                     <ul class="flex flex-wrap items-center text-sm">
                     </ul>
                 </div>
-                <div id="retype-copyright" class="print:justify-center py-2 text-footer-text font-footer-link text-sm leading-relaxed"><p>© 2025 Bricksum. All rights reserved.</p></div>
+                <div id="retype-copyright" class="print:justify-center py-2 text-footer-text font-footer-link text-sm leading-relaxed"><p>© 2026 Bricksum. All rights reserved.</p></div>
             </footer>
         </div>
     </div>
@@ -283,6 +294,6 @@
 
     <div id="retype-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "관리자 초기 설정", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+        <script data-cfasync="false">window.__DOCS__ = { "title": "관리자 초기 설정", level: 2, icon: "file", hasPrism: false, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/getting-started/admin-setup.md" }</script>
 </body>
 </html>

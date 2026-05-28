@@ -5,40 +5,44 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
     <meta name="turbo-root" content="/Cluma-Docs-Retype">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.4.0.828864097787">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.833313780376">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.4.0">
+    <meta name="generator" content="Retype 4.6.0">
 
     <!-- Primary Meta Tags -->
-    <title>클러스터 모니터링</title>
-    <meta name="title" content="클러스터 모니터링">
-    <meta name="description" content="Grafana 기반 클러스터 실시간 모니터링 접근 방법을 설명합니다.">
+    <title>감사 로그</title>
+    <meta name="title" content="감사 로그">
+    <meta name="description" content="플랫폼 안의 주요 동작이 자동으로 남는 이력을 살펴봅니다.">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://bricksum.github.io/Cluma-Docs-Retype/admin-guide/cluster-monitoring/">
+    <link rel="canonical" href="https://bricksum.github.io/Cluma-Docs-Retype/admin-guide/audit-logs/">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="https://bricksum.github.io/Cluma-Docs-Retype/sitemap.xml">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://bricksum.github.io/Cluma-Docs-Retype/admin-guide/cluster-monitoring/">
-    <meta property="og:title" content="클러스터 모니터링">
-    <meta property="og:description" content="Grafana 기반 클러스터 실시간 모니터링 접근 방법을 설명합니다.">
+    <meta property="og:url" content="https://bricksum.github.io/Cluma-Docs-Retype/admin-guide/audit-logs/">
+    <meta property="og:title" content="감사 로그">
+    <meta property="og:description" content="플랫폼 안의 주요 동작이 자동으로 남는 이력을 살펴봅니다.">
     <meta property="og:site_name" content="">
     <meta property="og:locale" content="en_US">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://bricksum.github.io/Cluma-Docs-Retype/admin-guide/cluster-monitoring/">
-    <meta name="twitter:title" content="클러스터 모니터링">
-    <meta name="twitter:description" content="Grafana 기반 클러스터 실시간 모니터링 접근 방법을 설명합니다.">
+    <meta name="twitter:url" content="https://bricksum.github.io/Cluma-Docs-Retype/admin-guide/audit-logs/">
+    <meta name="twitter:title" content="감사 로그">
+    <meta name="twitter:description" content="플랫폼 안의 주요 동작이 자동으로 남는 이력을 살펴봅니다.">
+
+    <!-- Alternate Markdown -->
+    <link rel="alternate" type="text/markdown" href="https://bricksum.github.io/Cluma-Docs-Retype/admin-guide/audit-logs.md">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../../resources/css/retype.css?v=4.4.0.828864097787" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.6.0.833313780376" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.4.0.828864097787" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.4.0.828864097787" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.6.0.833313780376" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.6.0.833313780376" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -68,12 +72,10 @@
                 <nav id="retype-header-nav" class="hidden md:flex">
                     <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
                         <li class="mr-6">
-                            <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://www.bricksum.com/">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
-                                    <path d="M11.03 2.59a1.501 1.501 0 0 1 1.94 0l7.5 6.363a1.5 1.5 0 0 1 .53 1.144V19.5a1.5 1.5 0 0 1-1.5 1.5h-5.75a.75.75 0 0 1-.75-.75V14h-2v6.25a.75.75 0 0 1-.75.75H4.5A1.5 1.5 0 0 1 3 19.5v-9.403c0-.44.194-.859.53-1.144ZM12 3.734l-7.5 6.363V19.5h5v-6.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v6.25h5v-9.403Z"/>
-                                </svg>
-                                <span>Website</span>
-                            </a>
+                            <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://www.bricksum.com/">Website</a>
+                        </li>
+                        <li class="mr-6">
+                            <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="../../release-notes/">Release Notes</a>
                         </li>
     
                     </ul>
@@ -125,12 +127,10 @@
                         <nav>
                             <ul class="flex flex-wrap justify-center items-center">
                                 <li class="mr-6">
-                                    <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://www.bricksum.com/">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
-                                            <path d="M11.03 2.59a1.501 1.501 0 0 1 1.94 0l7.5 6.363a1.5 1.5 0 0 1 .53 1.144V19.5a1.5 1.5 0 0 1-1.5 1.5h-5.75a.75.75 0 0 1-.75-.75V14h-2v6.25a.75.75 0 0 1-.75.75H4.5A1.5 1.5 0 0 1 3 19.5v-9.403c0-.44.194-.859.53-1.144ZM12 3.734l-7.5 6.363V19.5h5v-6.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v6.25h5v-9.403Z"/>
-                                        </svg>
-                                        <span>Website</span>
-                                    </a>
+                                    <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://www.bricksum.com/">Website</a>
+                                </li>
+                                <li class="mr-6">
+                                    <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="../../release-notes/">Release Notes</a>
                                 </li>
         
                             </ul>
@@ -150,150 +150,248 @@
 <div class="flex">
     <div id="retype-main" class="min-w-0 p-4 grow md:px-16">
         <main class="relative pb-12 lg:pt-2">
-            <div class="retype-markdown" id="retype-content">
+            <div class="relative retype-markdown" id="retype-content">
                 <!-- Rendered if sidebar right is enabled -->
                 <div id="retype-sidebar-right-toggle"></div>
+                <doc-page-actions></doc-page-actions>
+
                 <!-- Page content  -->
-<h1 id="클러스터-모니터링">클러스터 모니터링</h1>
-<p>Grafana 기반 클러스터 실시간 모니터링 접근 방법을 설명합니다.</p>
+<h1 id="감사-로그">감사 로그</h1>
+<p>플랫폼 안의 주요 동작이 자동으로 남는 이력을 살펴봅니다.</p>
+<p>관리자 메뉴 → <strong>감사 로그</strong> 로 들어갑니다.</p>
 <hr>
-<h2 id="개요">개요</h2>
-<p>클러스터 모니터링은 Grafana 대시보드를 통해 CPU, 메모리, GPU 등 클러스터 리소스의 시계열 사용량을 확인하는 기능입니다. 사이드바의 <strong>클러스터 모니터링</strong>을 클릭하면 Grafana가 새 탭으로 열립니다.</p>
-<p>Grafana는 Cluma와 별도로 Kubernetes 클러스터 내 <code translate="no" v-pre>monitoring</code> 네임스페이스에 배포되며, Cluma 관리자가 해당 URL을 설정한 경우에만 접근할 수 있습니다.</p>
-<div class="flex mb-6 note">
-    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
-    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
-        <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
-                <g fill="currentColor"><g>
-                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
-                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
-                    <path fill="none" d="M0 0h24v24H0z"></path>
-                </g></g>
-            </svg>
-        </div>
-        <div class="pr-5 ml-3 w-full">
-            <h5>note 버튼 클릭 시 아무 반응이 없는 경우</h5>
-<p>Grafana URL이 설정되지 않은 상태입니다. 클러스터 배포 담당자에게 <code translate="no" v-pre>NEXT_PUBLIC_GRAFANA_URL</code> 환경변수 설정을 요청하세요.</p>
-        </div>
-    </div>
+<h2 id="어떤-동작이-남나요">어떤 동작이 남나요</h2>
+<retype-table copy-text="| 카테고리 | 예시 |
+|---------|------|
+| 인증 (auth) | 로그인 · 로그아웃 · 토큰 갱신 |
+| 컨테이너 (container) | 만들기 · 고치기 · 지우기 · 예약 · 상태 진단 조회 |
+| 스토리지 (storage) | 만들기 · 고치기 · 지우기 · 마운트 |
+| 사용자 (user) | 만들기 · 고치기 · 지우기 · 비밀번호 초기화 |
+| 그룹 (group) | 만들기 · 고치기 · 지우기 · 멤버 변경 |
+| 템플릿 (template) | 만들기 · 지우기 |
+| 레포지토리 (repository) | 등록 · 고치기 · 지우기 |">
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>카테고리</th>
+<th>예시</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>인증 (auth)</td>
+<td>로그인 · 로그아웃 · 토큰 갱신</td>
+</tr>
+<tr>
+<td>컨테이너 (container)</td>
+<td>만들기 · 고치기 · 지우기 · 예약 · 상태 진단 조회</td>
+</tr>
+<tr>
+<td>스토리지 (storage)</td>
+<td>만들기 · 고치기 · 지우기 · 마운트</td>
+</tr>
+<tr>
+<td>사용자 (user)</td>
+<td>만들기 · 고치기 · 지우기 · 비밀번호 초기화</td>
+</tr>
+<tr>
+<td>그룹 (group)</td>
+<td>만들기 · 고치기 · 지우기 · 멤버 변경</td>
+</tr>
+<tr>
+<td>템플릿 (template)</td>
+<td>만들기 · 지우기</td>
+</tr>
+<tr>
+<td>레포지토리 (repository)</td>
+<td>등록 · 고치기 · 지우기</td>
+</tr>
+</tbody>
+</table>
 </div>
+</retype-table>
+<p>각 이벤트에는 사용자 · 동작 · 결과(성공/실패) · 결과 코드 · 처리 시간 · 어떤 자원에 영향이 갔는지 · IP · 요청 ID가 함께 남습니다.</p>
 <hr>
-<h2 id="접근-방법">접근 방법</h2>
-<p>관리자 메뉴 → <strong>클러스터 모니터링</strong> 클릭 → Grafana 대시보드가 새 탭으로 열립니다.</p>
+<h2 id="필터">필터</h2>
+<p>위쪽 필터 영역에서 보고 싶은 범위를 좁힙니다.</p>
+<retype-table copy-text="| 필터 | 어떤 식 |
+|------|---------|
+| 시작일 / 종료일 | 분 단위까지 정할 수 있음 |
+| 사용자 | 이메일로 거르기 |
+| 카테고리 | 전체 / 인증 / 컨테이너 / 스토리지 / 사용자 / 그룹 / 템플릿 / 레포지토리 |
+| 결과 | 전체 / 성공 / 실패 |
+| 동작 | 동작 이름으로 검색 (예: `container.create`) |">
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>필터</th>
+<th>어떤 식</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>시작일 / 종료일</td>
+<td>분 단위까지 정할 수 있음</td>
+</tr>
+<tr>
+<td>사용자</td>
+<td>이메일로 거르기</td>
+</tr>
+<tr>
+<td>카테고리</td>
+<td>전체 / 인증 / 컨테이너 / 스토리지 / 사용자 / 그룹 / 템플릿 / 레포지토리</td>
+</tr>
+<tr>
+<td>결과</td>
+<td>전체 / 성공 / 실패</td>
+</tr>
+<tr>
+<td>동작</td>
+<td>동작 이름으로 검색 (예: <code translate="no" v-pre>container.create</code>)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</retype-table>
+<p>값을 바꾸고 <strong>적용</strong>을 누르면 결과가 다시 불러집니다. <strong>초기화</strong> 로 처음 상태로 돌아갑니다.</p>
 <hr>
-<h2 id="grafana에서-확인할-수-있는-정보">Grafana에서 확인할 수 있는 정보</h2>
-<p>Grafana 대시보드에서는 클러스터의 리소스 사용 추이를 시계열 그래프로 확인할 수 있습니다.</p>
+<h2 id="표">표</h2>
+<retype-table copy-text="| 열 | 어떤 값 |
+|----|---------|
+| 시간 | 언제 일어났는지 (`YYYY-MM-DD HH:MM:SS`) |
+| 사용자 | 그 동작을 한 사람 |
+| 동작 | 동작 이름 (예: `container.create`, `auth.login`) |
+| 카테고리 | 인증 / 컨테이너 / ... |
+| 결과 | 성공 / 실패 |
+| 자원 | 영향을 받은 자원 (`종류:이름`) |
+| 결과 코드 | HTTP 응답 코드 |
+| 처리 시간 | 요청 처리에 걸린 시간 (ms / s) |">
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>열</th>
+<th>어떤 값</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>시간</td>
+<td>언제 일어났는지 (<code translate="no" v-pre>YYYY-MM-DD HH:MM:SS</code>)</td>
+</tr>
+<tr>
+<td>사용자</td>
+<td>그 동작을 한 사람</td>
+</tr>
+<tr>
+<td>동작</td>
+<td>동작 이름 (예: <code translate="no" v-pre>container.create</code>, <code translate="no" v-pre>auth.login</code>)</td>
+</tr>
+<tr>
+<td>카테고리</td>
+<td>인증 / 컨테이너 / ...</td>
+</tr>
+<tr>
+<td>결과</td>
+<td>성공 / 실패</td>
+</tr>
+<tr>
+<td>자원</td>
+<td>영향을 받은 자원 (<code translate="no" v-pre>종류:이름</code>)</td>
+</tr>
+<tr>
+<td>결과 코드</td>
+<td>HTTP 응답 코드</td>
+</tr>
+<tr>
+<td>처리 시간</td>
+<td>요청 처리에 걸린 시간 (ms / s)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</retype-table>
+<p>줄을 누르면 <strong>상세 창</strong>이 열립니다.</p>
+<hr>
+<h2 id="상세-창">상세 창</h2>
+<retype-table copy-text="| 항목 | 어떤 정보 |
+|------|----------|
+| 기본 | 시간 · 사용자 · 동작 · 카테고리 · 결과 |
+| 요청 | HTTP 방식 · 경로 · 결과 코드 · IP · 요청 ID |
+| 자원 | 영향을 받은 자원의 종류 · ID · 이름 |
+| 세부 | 동작별 추가 정보 — 예: 컨테이너를 만들 때 쓴 인스턴스 · 이미지 등 |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
 <tr>
 <th>항목</th>
-<th>설명</th>
+<th>어떤 정보</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>CPU 사용률</td>
-<td>노드별·전체 CPU 사용률 추이</td>
+<td>기본</td>
+<td>시간 · 사용자 · 동작 · 카테고리 · 결과</td>
 </tr>
 <tr>
-<td>메모리 사용률</td>
-<td>노드별·전체 메모리 사용률 추이</td>
+<td>요청</td>
+<td>HTTP 방식 · 경로 · 결과 코드 · IP · 요청 ID</td>
 </tr>
 <tr>
-<td>GPU 사용률</td>
-<td>GPU 노드의 가속기 사용률 추이</td>
+<td>자원</td>
+<td>영향을 받은 자원의 종류 · ID · 이름</td>
 </tr>
 <tr>
-<td>네트워크 I/O</td>
-<td>노드별 네트워크 입출력 트래픽</td>
-</tr>
-<tr>
-<td>디스크 I/O</td>
-<td>노드별 디스크 읽기/쓰기 트래픽</td>
-</tr>
-<tr>
-<td>Pod 상태</td>
-<td>네임스페이스별 Pod 수 및 상태 추이</td>
+<td>세부</td>
+<td>동작별 추가 정보 — 예: 컨테이너를 만들 때 쓴 인스턴스 · 이미지 등</td>
 </tr>
 </tbody>
 </table>
 </div>
+</retype-table>
+<p>요청 ID는 서버 로그와 1:1로 짝지어집니다. 실패 원인을 따라가다 서버 로그를 봐야 할 때, 같은 ID로 검색하면 됩니다.</p>
 <hr>
-<h2 id="grafana-접속-정보">Grafana 접속 정보</h2>
-<p>Grafana는 클러스터 배포 시 설정된 주소로 접근합니다. 기본 설정은 아래와 같습니다.</p>
+<h2 id="페이지-넘기기">페이지 넘기기</h2>
+<p>표 아래쪽에서 페이지를 넘깁니다. 기본은 50줄씩 보이고, 필터를 좁혀 두면 응답이 더 빨라집니다.</p>
+<hr>
+<h2 id="자주-쓰는-활용-예시">자주 쓰는 활용 예시</h2>
+<retype-table copy-text="| 상황 | 어떻게 |
+|------|--------|
+| 특정 사용자가 무엇을 했는지 | 사용자 필터 + 기간 |
+| 실패한 컨테이너 생성 원인 | 카테고리=컨테이너, 결과=실패 |
+| 이상한 로그인 시도 감지 | 카테고리=인증, 결과=실패 |
+| 누가 그룹을 지웠는지 | 동작=`group.delete` |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
 <tr>
-<th>항목</th>
-<th>기본값</th>
+<th>상황</th>
+<th>어떻게</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Grafana 주소</td>
-<td><code translate="no" v-pre>http://grafana.internal</code></td>
+<td>특정 사용자가 무엇을 했는지</td>
+<td>사용자 필터 + 기간</td>
 </tr>
 <tr>
-<td>네임스페이스</td>
-<td><code translate="no" v-pre>monitoring</code></td>
+<td>실패한 컨테이너 생성 원인</td>
+<td>카테고리=컨테이너, 결과=실패</td>
+</tr>
+<tr>
+<td>이상한 로그인 시도 감지</td>
+<td>카테고리=인증, 결과=실패</td>
+</tr>
+<tr>
+<td>누가 그룹을 지웠는지</td>
+<td>동작=<code translate="no" v-pre>group.delete</code></td>
 </tr>
 </tbody>
 </table>
 </div>
-<div class="flex mb-6 note">
-    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
-    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
-        <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
-                <g fill="currentColor"><g>
-                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
-                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
-                    <path fill="none" d="M0 0h24v24H0z"></path>
-                </g></g>
-            </svg>
-        </div>
-        <div class="pr-5 ml-3 w-full">
-            <h5>note 내부 도메인 접근 설정</h5>
-<p><code translate="no" v-pre>grafana.internal</code> 등 내부 도메인을 사용하는 경우, 클라이언트 PC의 <code translate="no" v-pre>/etc/hosts</code> 파일에 아래 항목을 추가해야 합니다.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-none"><code v-pre class="language-none">&lt;노드 IP&gt;  grafana.internal</code></pre>
-</doc-codeblock></div>
-        </div>
-    </div>
-</div>
-<hr>
-<h2 id="클러스터-대시보드와의-차이">클러스터 대시보드와의 차이</h2>
-<div class="table-wrapper scrollbar overflow-hidden">
-<table class="comfortable">
-<thead>
-<tr>
-<th> </th>
-<th>클러스터 대시보드</th>
-<th>클러스터 모니터링</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>목적</strong></td>
-<td>노드 상태 및 Pod 현황 실시간 확인</td>
-<td>리소스 사용량 시계열 분석</td>
-</tr>
-<tr>
-<td><strong>데이터</strong></td>
-<td>현재 상태 스냅샷</td>
-<td>과거~현재 추이 그래프</td>
-</tr>
-<tr>
-<td><strong>도구</strong></td>
-<td>Cluma 내장</td>
-<td>Grafana (외부 연동)</td>
-</tr>
-</tbody>
-</table>
-</div>
+</retype-table>
 
                 
                 <!-- Required only on API pages -->
@@ -303,11 +401,11 @@
             
                 <nav id="retype-nextprev" class="print:hidden flex mt-14">
                     <div class="w-1/2">
-                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../admin-guide/cluster-dashboard/">
+                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../admin-guide/cluster/">
                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                             <span>
                                 <span class="block text-xs font-normal text-base-text-muted">Previous</span>
-                                <span class="block mt-1">클러스터 대시보드</span>
+                                <span class="block mt-1">클러스터</span>
                             </span>
                         </a>
                     </div>
@@ -331,7 +429,7 @@
                     <ul class="flex flex-wrap items-center text-sm">
                     </ul>
                 </div>
-                <div id="retype-copyright" class="print:justify-center py-2 text-footer-text font-footer-link text-sm leading-relaxed"><p>© 2025 Bricksum. All rights reserved.</p></div>
+                <div id="retype-copyright" class="print:justify-center py-2 text-footer-text font-footer-link text-sm leading-relaxed"><p>© 2026 Bricksum. All rights reserved.</p></div>
             </footer>
         </div>
     </div>
@@ -360,6 +458,6 @@
 
     <div id="retype-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "클러스터 모니터링", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+        <script data-cfasync="false">window.__DOCS__ = { "title": "감사 로그", level: 2, icon: "file", hasPrism: false, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/admin-guide/audit-logs.md" }</script>
 </body>
 </html>

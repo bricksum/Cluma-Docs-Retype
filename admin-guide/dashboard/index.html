@@ -5,24 +5,25 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
     <meta name="turbo-root" content="/Cluma-Docs-Retype">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.4.0.828864097787">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.833313780376">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.4.0">
+    <meta name="generator" content="Retype 4.6.0">
 
     <!-- Primary Meta Tags -->
     <title>관리자 대시보드</title>
     <meta name="title" content="관리자 대시보드">
-    <meta name="description" content="클러스터 전체 리소스 사용 현황과 그룹별 사용량을 통합 모니터링하는 화면입니다.">
+    <meta name="description" content="전체 클러스터와 그룹별 사용 현황을 한눈에 살펴보는 화면입니다.">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://bricksum.github.io/Cluma-Docs-Retype/admin-guide/dashboard/">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="https://bricksum.github.io/Cluma-Docs-Retype/sitemap.xml">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://bricksum.github.io/Cluma-Docs-Retype/admin-guide/dashboard/">
     <meta property="og:title" content="관리자 대시보드">
-    <meta property="og:description" content="클러스터 전체 리소스 사용 현황과 그룹별 사용량을 통합 모니터링하는 화면입니다.">
+    <meta property="og:description" content="전체 클러스터와 그룹별 사용 현황을 한눈에 살펴보는 화면입니다.">
     <meta property="og:site_name" content="">
     <meta property="og:locale" content="en_US">
 
@@ -30,15 +31,18 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://bricksum.github.io/Cluma-Docs-Retype/admin-guide/dashboard/">
     <meta name="twitter:title" content="관리자 대시보드">
-    <meta name="twitter:description" content="클러스터 전체 리소스 사용 현황과 그룹별 사용량을 통합 모니터링하는 화면입니다.">
+    <meta name="twitter:description" content="전체 클러스터와 그룹별 사용 현황을 한눈에 살펴보는 화면입니다.">
+
+    <!-- Alternate Markdown -->
+    <link rel="alternate" type="text/markdown" href="https://bricksum.github.io/Cluma-Docs-Retype/admin-guide/dashboard.md">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../../resources/css/retype.css?v=4.4.0.828864097787" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.6.0.833313780376" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.4.0.828864097787" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.4.0.828864097787" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.6.0.833313780376" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.6.0.833313780376" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -68,12 +72,10 @@
                 <nav id="retype-header-nav" class="hidden md:flex">
                     <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
                         <li class="mr-6">
-                            <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://www.bricksum.com/">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
-                                    <path d="M11.03 2.59a1.501 1.501 0 0 1 1.94 0l7.5 6.363a1.5 1.5 0 0 1 .53 1.144V19.5a1.5 1.5 0 0 1-1.5 1.5h-5.75a.75.75 0 0 1-.75-.75V14h-2v6.25a.75.75 0 0 1-.75.75H4.5A1.5 1.5 0 0 1 3 19.5v-9.403c0-.44.194-.859.53-1.144ZM12 3.734l-7.5 6.363V19.5h5v-6.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v6.25h5v-9.403Z"/>
-                                </svg>
-                                <span>Website</span>
-                            </a>
+                            <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://www.bricksum.com/">Website</a>
+                        </li>
+                        <li class="mr-6">
+                            <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="../../release-notes/">Release Notes</a>
                         </li>
     
                     </ul>
@@ -125,12 +127,10 @@
                         <nav>
                             <ul class="flex flex-wrap justify-center items-center">
                                 <li class="mr-6">
-                                    <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://www.bricksum.com/">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
-                                            <path d="M11.03 2.59a1.501 1.501 0 0 1 1.94 0l7.5 6.363a1.5 1.5 0 0 1 .53 1.144V19.5a1.5 1.5 0 0 1-1.5 1.5h-5.75a.75.75 0 0 1-.75-.75V14h-2v6.25a.75.75 0 0 1-.75.75H4.5A1.5 1.5 0 0 1 3 19.5v-9.403c0-.44.194-.859.53-1.144ZM12 3.734l-7.5 6.363V19.5h5v-6.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v6.25h5v-9.403Z"/>
-                                        </svg>
-                                        <span>Website</span>
-                                    </a>
+                                    <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://www.bricksum.com/">Website</a>
+                                </li>
+                                <li class="mr-6">
+                                    <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="../../release-notes/">Release Notes</a>
                                 </li>
         
                             </ul>
@@ -150,17 +150,24 @@
 <div class="flex">
     <div id="retype-main" class="min-w-0 p-4 grow md:px-16">
         <main class="relative pb-12 lg:pt-2">
-            <div class="retype-markdown" id="retype-content">
+            <div class="relative retype-markdown" id="retype-content">
                 <!-- Rendered if sidebar right is enabled -->
                 <div id="retype-sidebar-right-toggle"></div>
+                <doc-page-actions></doc-page-actions>
+
                 <!-- Page content  -->
 <h1 id="관리자-대시보드">관리자 대시보드</h1>
-<p>클러스터 전체 리소스 사용 현황과 그룹별 사용량을 통합 모니터링하는 화면입니다.</p>
-<p>관리자 메뉴 → <strong>관리자 대시보드</strong>에서 접근합니다.</p>
+<p>전체 클러스터와 그룹별 사용 현황을 한눈에 살펴보는 화면입니다.</p>
+<p>관리자 메뉴 → <strong>관리자 대시보드</strong> 로 들어갑니다.</p>
 <hr>
-<h2 id="클러스터-전체-현황">클러스터 전체 현황</h2>
-<p>상단 <strong>클러스터 전체 현황</strong> 섹션에서 리소스 상태를 카드로 확인합니다.</p>
-<p>각 카드는 <strong>사용량 / 할당량 / 총량</strong> 및 <strong>사용률</strong> 프로그레스 바로 표시됩니다.</p>
+<h2 id="위쪽--클러스터-전체-현황">위쪽 — 클러스터 전체 현황</h2>
+<p>자원별로 카드가 보입니다. 각 카드에는 <strong>사용량 / 한도 / 총량</strong> 과 사용률 막대가 함께 들어 있습니다.</p>
+<retype-table copy-text="| 카드 | 단위 |
+|------|------|
+| CPU | 코어 |
+| Memory | GB |
+| Storage | GB |
+| 가속기 | 종류별로 카드 한 장씩 (개) |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -172,7 +179,7 @@
 <tbody>
 <tr>
 <td>CPU</td>
-<td>cores</td>
+<td>코어</td>
 </tr>
 <tr>
 <td>Memory</td>
@@ -183,19 +190,25 @@
 <td>GB</td>
 </tr>
 <tr>
-<td>디바이스별 현황</td>
-<td>개 (가속기 유형별로 개별 카드 표시)</td>
+<td>가속기</td>
+<td>종류별로 카드 한 장씩 (개)</td>
 </tr>
 </tbody>
 </table>
 </div>
-<p>사용률에 따라 프로그레스 바와 수치 색상이 변경됩니다.</p>
+</retype-table>
+<p>사용률에 따라 색이 바뀝니다.</p>
+<retype-table copy-text="| 범위 | 색 |
+|------|-----|
+| 0 ~ 69% | 기본 |
+| 70 ~ 89% | 노랑 |
+| 90% 이상 | 빨강 |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
 <tr>
 <th>범위</th>
-<th>색상</th>
+<th>색</th>
 </tr>
 </thead>
 <tbody>
@@ -205,84 +218,97 @@
 </tr>
 <tr>
 <td>70 ~ 89%</td>
-<td>노란색</td>
+<td>노랑</td>
 </tr>
 <tr>
 <td>90% 이상</td>
-<td>빨간색</td>
+<td>빨강</td>
 </tr>
 </tbody>
 </table>
 </div>
+</retype-table>
 <hr>
-<h2 id="그룹별-리소스-사용량">그룹별 리소스 사용량</h2>
-<p>하단 <strong>그룹별 리소스 사용량</strong> 섹션에서 그룹 단위 사용 현황을 확인합니다.</p>
-<h3 id="그룹-필터">그룹 필터</h3>
-<p>상단 드롭다운에서 그룹을 선택하면 파이차트 표시 내용이 전환됩니다.</p>
+<h2 id="아래쪽--그룹별-사용량">아래쪽 — 그룹별 사용량</h2>
+<h3 id="그룹-고르기">그룹 고르기</h3>
+<p>위쪽 드롭다운에서 그룹을 고르면 파이 차트가 다르게 보입니다.</p>
+<retype-table copy-text="| 고른 값 | 파이 차트가 보여주는 것 |
+|---------|----------------------|
+| 전체 | 클러스터 전체 용량에서 그룹들이 차지하는 비율 |
+| 특정 그룹 | 그 그룹의 한도 안에서 지금 얼마나 쓰고 있는지 |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
 <tr>
-<th>선택</th>
-<th>파이차트 표시 내용</th>
+<th>고른 값</th>
+<th>파이 차트가 보여주는 것</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>전체</td>
-<td>클러스터 전체 용량 대비 각 그룹의 할당량 비율</td>
+<td>클러스터 전체 용량에서 그룹들이 차지하는 비율</td>
 </tr>
 <tr>
 <td>특정 그룹</td>
-<td>해당 그룹의 할당량 대비 현재 사용량</td>
+<td>그 그룹의 한도 안에서 지금 얼마나 쓰고 있는지</td>
 </tr>
 </tbody>
 </table>
 </div>
-<p>파이차트에서 그룹 영역을 직접 클릭해도 해당 그룹 상세 보기로 전환되며, <strong>← 전체 보기</strong> 버튼으로 돌아올 수 있습니다.</p>
-<p>파이차트 위에 마우스를 올리면 해당 그룹의 할당량과 비율이 툴팁으로 표시됩니다.</p>
-<h3 id="파이차트">파이차트</h3>
-<p>CPU / Memory / 가속기 / Storage 4개 리소스에 대해 그룹별 비율을 파이차트로 시각화합니다.<br />
-미할당 용량은 회색으로 표시됩니다.</p>
-<h3 id="그룹별-요약-테이블">그룹별 요약 테이블</h3>
-<p>모든 그룹의 리소스 사용 현황을 한눈에 확인할 수 있습니다.</p>
+</retype-table>
+<p>파이 차트의 그룹 영역을 직접 눌러도 같은 효과입니다. <strong>← 전체 보기</strong> 버튼으로 다시 돌아옵니다.</p>
+<p>차트에 마우스를 올리면 그 그룹의 한도와 비율이 풍선 도움말로 나옵니다.</p>
+<h3 id="파이-차트">파이 차트</h3>
+<p>CPU · Memory · 가속기 · Storage 네 가지에 대해, 그룹별로 어떻게 나뉘는지 보여 줍니다. 아무한테도 안 준 영역은 회색입니다.</p>
+<h3 id="그룹별-표">그룹별 표</h3>
+<p>모든 그룹의 사용 현황이 한 표에 모입니다.</p>
+<retype-table copy-text="| 열 | 어떤 값 |
+|----|---------|
+| 그룹명 | 누르면 그 그룹만 따로 보기 |
+| CPU 사용/한도 | 사용량 / 한도 / 사용률(%) |
+| MEMORY 사용/한도 | 메모리(GB) 사용량 / 한도 / 사용률(%) |
+| 가속기 사용/한도 | 가속기 종류별 사용량 / 한도 |
+| STORAGE 사용/한도 | 스토리지(GB) 사용량 / 한도 / 사용률(%) |
+| POD 수 | 지금 동작 중인 Pod 수 |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
 <tr>
 <th>열</th>
-<th>설명</th>
+<th>어떤 값</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>그룹명</td>
-<td>그룹 이름 (클릭 시 해당 그룹 상세 보기로 전환)</td>
+<td>누르면 그 그룹만 따로 보기</td>
 </tr>
 <tr>
-<td>CPU 사용/할당</td>
-<td>CPU 코어 사용량 / 할당량 및 사용률(%)</td>
+<td>CPU 사용/한도</td>
+<td>사용량 / 한도 / 사용률(%)</td>
 </tr>
 <tr>
-<td>MEMORY 사용/할당</td>
-<td>메모리(GB) 사용량 / 할당량 및 사용률(%)</td>
+<td>MEMORY 사용/한도</td>
+<td>메모리(GB) 사용량 / 한도 / 사용률(%)</td>
 </tr>
 <tr>
-<td>디바이스 사용/할당</td>
-<td>가속기 유형별 사용량 / 할당량</td>
+<td>가속기 사용/한도</td>
+<td>가속기 종류별 사용량 / 한도</td>
 </tr>
 <tr>
-<td>STORAGE 사용/할당</td>
-<td>스토리지(GB) 사용량 / 할당량 및 사용률(%)</td>
+<td>STORAGE 사용/한도</td>
+<td>스토리지(GB) 사용량 / 한도 / 사용률(%)</td>
 </tr>
 <tr>
 <td>POD 수</td>
-<td>현재 실행 중인 Pod 수</td>
+<td>지금 동작 중인 Pod 수</td>
 </tr>
 </tbody>
 </table>
 </div>
-<p>사용률이 70% 이상이면 노란색, 90% 이상이면 빨간색으로 강조됩니다. 할당량이 없는 경우 <code translate="no" v-pre>(미할당)</code> 으로 표시됩니다.</p>
+</retype-table>
+<p>사용률이 70%를 넘으면 노랑, 90%를 넘으면 빨강으로 강조됩니다. 한도가 정해져 있지 않으면 <code translate="no" v-pre>(미할당)</code> 으로 보입니다.</p>
 
                 
                 <!-- Required only on API pages -->
@@ -320,7 +346,7 @@
                     <ul class="flex flex-wrap items-center text-sm">
                     </ul>
                 </div>
-                <div id="retype-copyright" class="print:justify-center py-2 text-footer-text font-footer-link text-sm leading-relaxed"><p>© 2025 Bricksum. All rights reserved.</p></div>
+                <div id="retype-copyright" class="print:justify-center py-2 text-footer-text font-footer-link text-sm leading-relaxed"><p>© 2026 Bricksum. All rights reserved.</p></div>
             </footer>
         </div>
     </div>
@@ -349,6 +375,6 @@
 
     <div id="retype-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "관리자 대시보드", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+        <script data-cfasync="false">window.__DOCS__ = { "title": "관리자 대시보드", level: 2, icon: "file", hasPrism: false, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/admin-guide/dashboard.md" }</script>
 </body>
 </html>

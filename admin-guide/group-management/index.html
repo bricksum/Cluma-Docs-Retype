@@ -5,24 +5,25 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
     <meta name="turbo-root" content="/Cluma-Docs-Retype">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.4.0.828864097787">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.833313780376">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.4.0">
+    <meta name="generator" content="Retype 4.6.0">
 
     <!-- Primary Meta Tags -->
     <title>그룹 관리</title>
     <meta name="title" content="그룹 관리">
-    <meta name="description" content="그룹 생성·수정·삭제 및 리소스 한도 설정 방법을 설명합니다.">
+    <meta name="description" content="그룹을 만들고 자원 한도를 정하는 방법입니다.">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://bricksum.github.io/Cluma-Docs-Retype/admin-guide/group-management/">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="https://bricksum.github.io/Cluma-Docs-Retype/sitemap.xml">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://bricksum.github.io/Cluma-Docs-Retype/admin-guide/group-management/">
     <meta property="og:title" content="그룹 관리">
-    <meta property="og:description" content="그룹 생성·수정·삭제 및 리소스 한도 설정 방법을 설명합니다.">
+    <meta property="og:description" content="그룹을 만들고 자원 한도를 정하는 방법입니다.">
     <meta property="og:site_name" content="">
     <meta property="og:locale" content="en_US">
 
@@ -30,15 +31,18 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://bricksum.github.io/Cluma-Docs-Retype/admin-guide/group-management/">
     <meta name="twitter:title" content="그룹 관리">
-    <meta name="twitter:description" content="그룹 생성·수정·삭제 및 리소스 한도 설정 방법을 설명합니다.">
+    <meta name="twitter:description" content="그룹을 만들고 자원 한도를 정하는 방법입니다.">
+
+    <!-- Alternate Markdown -->
+    <link rel="alternate" type="text/markdown" href="https://bricksum.github.io/Cluma-Docs-Retype/admin-guide/group-management.md">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../../resources/css/retype.css?v=4.4.0.828864097787" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.6.0.833313780376" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.4.0.828864097787" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.4.0.828864097787" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.6.0.833313780376" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.6.0.833313780376" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -68,12 +72,10 @@
                 <nav id="retype-header-nav" class="hidden md:flex">
                     <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
                         <li class="mr-6">
-                            <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://www.bricksum.com/">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
-                                    <path d="M11.03 2.59a1.501 1.501 0 0 1 1.94 0l7.5 6.363a1.5 1.5 0 0 1 .53 1.144V19.5a1.5 1.5 0 0 1-1.5 1.5h-5.75a.75.75 0 0 1-.75-.75V14h-2v6.25a.75.75 0 0 1-.75.75H4.5A1.5 1.5 0 0 1 3 19.5v-9.403c0-.44.194-.859.53-1.144ZM12 3.734l-7.5 6.363V19.5h5v-6.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v6.25h5v-9.403Z"/>
-                                </svg>
-                                <span>Website</span>
-                            </a>
+                            <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://www.bricksum.com/">Website</a>
+                        </li>
+                        <li class="mr-6">
+                            <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="../../release-notes/">Release Notes</a>
                         </li>
     
                     </ul>
@@ -125,12 +127,10 @@
                         <nav>
                             <ul class="flex flex-wrap justify-center items-center">
                                 <li class="mr-6">
-                                    <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://www.bricksum.com/">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
-                                            <path d="M11.03 2.59a1.501 1.501 0 0 1 1.94 0l7.5 6.363a1.5 1.5 0 0 1 .53 1.144V19.5a1.5 1.5 0 0 1-1.5 1.5h-5.75a.75.75 0 0 1-.75-.75V14h-2v6.25a.75.75 0 0 1-.75.75H4.5A1.5 1.5 0 0 1 3 19.5v-9.403c0-.44.194-.859.53-1.144ZM12 3.734l-7.5 6.363V19.5h5v-6.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v6.25h5v-9.403Z"/>
-                                        </svg>
-                                        <span>Website</span>
-                                    </a>
+                                    <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://www.bricksum.com/">Website</a>
+                                </li>
+                                <li class="mr-6">
+                                    <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="../../release-notes/">Release Notes</a>
                                 </li>
         
                             </ul>
@@ -150,106 +150,119 @@
 <div class="flex">
     <div id="retype-main" class="min-w-0 p-4 grow md:px-16">
         <main class="relative pb-12 lg:pt-2">
-            <div class="retype-markdown" id="retype-content">
+            <div class="relative retype-markdown" id="retype-content">
                 <!-- Rendered if sidebar right is enabled -->
                 <div id="retype-sidebar-right-toggle"></div>
+                <doc-page-actions></doc-page-actions>
+
                 <!-- Page content  -->
 <h1 id="그룹-관리">그룹 관리</h1>
-<p>그룹 생성·수정·삭제 및 리소스 한도 설정 방법을 설명합니다.</p>
+<p>그룹을 만들고 자원 한도를 정하는 방법입니다.</p>
 <hr>
 <h2 id="개요">개요</h2>
-<p>그룹은 사용자를 묶고 리소스 한도를 정의하는 단위입니다. 사용자는 반드시 하나 이상의 그룹에 소속되어야 컨테이너와 스토리지를 생성할 수 있습니다.</p>
+<p>그룹은 사용자들을 묶고 같이 쓸 자원의 상한선을 정해 두는 단위입니다. 사용자는 어느 그룹에든 한 곳 이상 속해야 컨테이너와 스토리지를 만들 수 있습니다.</p>
 <hr>
 <h2 id="그룹-목록">그룹 목록</h2>
-<p>관리자 메뉴 → <strong>그룹 관리</strong>에서 전체 그룹 목록을 확인할 수 있습니다.</p>
+<p>관리자 메뉴 → <strong>그룹 관리</strong>에서 전체 그룹이 보입니다.</p>
+<retype-table copy-text="| 열 | 어떤 값 |
+|----|---------|
+| 그룹명 | 그룹 이름 |
+| CPU | 정해 둔 CPU 코어 |
+| 메모리(GB) | 정해 둔 메모리 |
+| 가속기 | 정해 둔 GPU 등 가속기 수 |
+| 스토리지(GB) | 정해 둔 스토리지 용량 |
+| 멤버수 | 속한 사용자 수 |
+| 작업 | 고치기(연필) / 지우기(휴지통) |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
 <tr>
-<th>컬럼</th>
-<th>설명</th>
+<th>열</th>
+<th>어떤 값</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>그룹명</td>
-<td>그룹 식별 이름</td>
+<td>그룹 이름</td>
 </tr>
 <tr>
 <td>CPU</td>
-<td>할당된 CPU 코어 수</td>
+<td>정해 둔 CPU 코어</td>
 </tr>
 <tr>
 <td>메모리(GB)</td>
-<td>할당된 메모리 용량</td>
+<td>정해 둔 메모리</td>
 </tr>
 <tr>
-<td>디바이스</td>
-<td>할당된 GPU 등 디바이스 수</td>
+<td>가속기</td>
+<td>정해 둔 GPU 등 가속기 수</td>
 </tr>
 <tr>
 <td>스토리지(GB)</td>
-<td>할당된 스토리지 용량</td>
+<td>정해 둔 스토리지 용량</td>
 </tr>
 <tr>
 <td>멤버수</td>
-<td>소속 사용자 수</td>
+<td>속한 사용자 수</td>
 </tr>
 <tr>
 <td>작업</td>
-<td>수정(연필 아이콘) / 삭제(휴지통 아이콘)</td>
+<td>고치기(연필) / 지우기(휴지통)</td>
 </tr>
 </tbody>
 </table>
 </div>
+</retype-table>
 <hr>
-<h2 id="그룹-생성">그룹 생성</h2>
-<p>우측 상단 <strong>그룹 추가하기</strong> 버튼을 클릭합니다.</p>
-<h3 id="그룹명">그룹명</h3>
-<p>그룹을 식별할 이름을 입력합니다. (예: 개발팀, 연구팀)</p>
-<h3 id="리소스-할당">리소스 할당</h3>
-<p>그룹에 할당할 리소스를 설정합니다. 화면 상단에 <strong>할당 가능한 클러스터 잔여 리소스</strong>가 실시간으로 표시되므로, 이를 참고하여 설정합니다.</p>
+<h2 id="그룹-만들기">그룹 만들기</h2>
+<p>오른쪽 위 <strong>그룹 추가하기</strong> 를 누릅니다.</p>
+<h3 id="이름">이름</h3>
+<p>알아볼 수 있는 이름을 적습니다 (예: 개발팀, 연구팀).</p>
+<h3 id="자원-한도">자원 한도</h3>
+<p>위쪽에 <strong>지금 클러스터에 남아 있는 자원</strong> 이 실시간으로 보이므로, 그걸 보면서 정합니다.</p>
+<retype-table copy-text="| 항목 | 단위 |
+|------|------|
+| CPU 코어 | 2의 배수 |
+| 메모리 | 2의 거듭제곱 (2, 4, 8, 16, 32 GB ...) |
+| 스토리지 | 10GB 단위 또는 직접 입력 |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
 <tr>
 <th>항목</th>
 <th>단위</th>
-<th>설명</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>CPU 코어</td>
-<td>2의 배수 단위 선택</td>
-<td>그룹 전체에서 사용 가능한 최대 CPU 코어 수</td>
+<td>2의 배수</td>
 </tr>
 <tr>
 <td>메모리</td>
-<td>2의 지수 단위 선택 (2, 4, 8, 16, 32 GB...)</td>
-<td>그룹 전체에서 사용 가능한 최대 메모리</td>
+<td>2의 거듭제곱 (2, 4, 8, 16, 32 GB ...)</td>
 </tr>
 <tr>
 <td>스토리지</td>
-<td>10GB 단위 선택 또는 직접 입력</td>
-<td>그룹 전체에서 사용 가능한 최대 스토리지 용량</td>
+<td>10GB 단위 또는 직접 입력</td>
 </tr>
 </tbody>
 </table>
 </div>
-<h3 id="디바이스-할당">디바이스 할당</h3>
-<p>클러스터에 등록된 디바이스(NVIDIA GPU 등) 유형별로 할당 수량을 설정합니다. 디바이스 카드에 <strong>배분 가능 수 / 전체 수</strong>가 표시됩니다.</p>
-<h3 id="할당-후-남은-리소스">할당 후 남은 리소스</h3>
-<p>설정 완료 전, 하단의 <strong>할당 후 남은 리소스</strong> 섹션에서 이 그룹에 할당하고 나면 클러스터에 얼마나 남는지 미리 확인할 수 있습니다.</p>
-<div id="할당-후-남은-리소스-code-1" class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-none"><code v-pre class="language-none">예시) Default 그룹 설정
+</retype-table>
+<h3 id="가속기-한도">가속기 한도</h3>
+<p>등록된 가속기 종류별(NVIDIA GPU 등)로 몇 개까지 줄지 정합니다. 카드에 <strong>줄 수 있는 수 / 전체 수</strong>가 함께 나옵니다.</p>
+<h3 id="한도-적용-후-남는-자원">한도 적용 후 남는 자원</h3>
+<p>아래쪽 <strong>한도 적용 후 남는 자원</strong> 영역에서, 이 그룹에 주고 나면 클러스터에 얼마가 남는지 미리 보여 줍니다.</p>
+<div id="한도-적용-후-남는-자원-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-none"><code v-pre class="language-none">보기) Default 그룹 한도
 ├── CPU: 20 코어
 ├── 메모리: 64 GB
 ├── 스토리지: 90 GB
 └── NVIDIA GPU: 1 개
 
-→ 소속 사용자 A가 GPU 1개 사용 중이면,
-   소속 사용자 B는 GPU를 추가 사용할 수 없음</code></pre>
+→ A가 GPU 1개를 쓰고 있으면, B는 GPU를 더 못 씁니다.</code></pre>
 </doc-codeblock></div>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
@@ -263,16 +276,15 @@
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-            <h5>리소스 한도 초과 방지</h5>
-<p>그룹 리소스 한도를 초과하면 소속 사용자가 컨테이너를 생성할 수 없습니다.
-대시보드에서 현재 그룹의 잔여 리소스를 확인하여 적절히 할당하세요.</p>
+            <h5>한도가 너무 낮으면</h5>
+<p>사용자가 컨테이너를 못 만듭니다. 대시보드에서 그룹의 남은 자원을 보면서 적당히 조절하세요.</p>
         </div>
     </div>
 </div>
 <hr>
-<h2 id="그룹-수정">그룹 수정</h2>
-<p>목록에서 수정할 그룹의 <strong>연필 아이콘</strong>을 클릭합니다.</p>
-<p>그룹명과 리소스 할당량(CPU, 메모리, 스토리지, 디바이스)을 수정할 수 있습니다. 수정 화면에서도 현재 클러스터 잔여 리소스와 할당 후 남은 리소스를 실시간으로 확인할 수 있습니다.</p>
+<h2 id="그룹-고치기">그룹 고치기</h2>
+<p>목록에서 해당 그룹의 <strong>연필 아이콘</strong>을 누릅니다.</p>
+<p>이름과 자원 한도(CPU · 메모리 · 스토리지 · 가속기)를 고칠 수 있습니다. 고치는 동안에도 클러스터 남은 자원과 한도 적용 후 남는 자원이 실시간으로 보입니다.</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
@@ -285,14 +297,14 @@
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-            <h5>리소스 한도 축소 시 주의</h5>
-<p>리소스 한도를 현재 사용량보다 낮게 설정할 경우, 기존 컨테이너는 유지되지만 새로운 컨테이너 생성이 제한됩니다.</p>
+            <h5>지금 쓰는 양보다 낮게 줄이면</h5>
+<p>이미 동작 중인 컨테이너는 그대로 두지만, 새 컨테이너는 못 만들게 됩니다.</p>
         </div>
     </div>
 </div>
 <hr>
-<h2 id="그룹-삭제">그룹 삭제</h2>
-<p>목록에서 삭제할 그룹의 <strong>휴지통 아이콘</strong>을 클릭합니다. 삭제 확인을 위해 <strong>그룹 이름을 직접 입력</strong>해야 합니다.</p>
+<h2 id="그룹-지우기">그룹 지우기</h2>
+<p>목록에서 <strong>휴지통 아이콘</strong>을 누릅니다. 확인 창에서 그룹 이름을 직접 적어야 삭제가 풀립니다.</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-danger"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
@@ -305,21 +317,21 @@
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-            <h5>그룹 삭제 시 주의</h5>
-<p>이 작업은 되돌릴 수 없습니다. 그룹을 삭제하면 그룹에 소속된 모든 컨테이너와 스토리지가 영구 삭제됩니다.</p>
+            <h5>그룹 안 모든 것이 함께 사라집니다</h5>
+<p>지우면 그 그룹에 속한 컨테이너와 스토리지가 모두 영구적으로 없어집니다.</p>
         </div>
     </div>
 </div>
 <hr>
-<h2 id="사용자-그룹-할당">사용자-그룹 할당</h2>
-<h3 id="사용자를-그룹에-추가">사용자를 그룹에 추가</h3>
-<p>사용자 생성 시 그룹을 지정하거나, 관리자 메뉴 → <strong>사용자 관리</strong> → 사용자 수정에서 그룹을 추가할 수 있습니다.</p>
+<h2 id="사용자를-그룹에-넣고-빼기">사용자를 그룹에 넣고 빼기</h2>
+<h3 id="그룹에-넣기">그룹에 넣기</h3>
+<p>사용자를 만들 때 그룹을 정하거나, 관리자 메뉴 → <strong>사용자 관리</strong> → 사용자 고치기에서 그룹을 추가합니다.</p>
 <ul>
-<li>한 사용자는 여러 그룹에 동시에 소속될 수 있습니다.</li>
-<li>여러 그룹에 소속된 경우, 컨테이너 생성 시 소속 그룹 중 하나를 선택합니다.</li>
+<li>한 사용자는 여러 그룹에 동시에 속할 수 있습니다.</li>
+<li>여러 곳에 속해 있으면, 컨테이너를 만들 때 어느 그룹으로 만들지 고릅니다.</li>
 </ul>
-<h3 id="사용자를-그룹에서-제거">사용자를 그룹에서 제거</h3>
-<p>사용자 수정 화면에서 그룹을 제거합니다. 사용자가 모든 그룹에서 제거되면 리소스를 사용할 수 없게 되므로, 최소 하나의 그룹에 소속된 상태를 유지하는 것을 권장합니다.</p>
+<h3 id="그룹에서-빼기">그룹에서 빼기</h3>
+<p>사용자 고치기 화면에서 그룹을 빼면 됩니다. 단, 모든 그룹에서 빠지면 자원을 못 쓰므로 최소 한 곳에는 속하도록 두기를 권장합니다.</p>
 
                 
                 <!-- Required only on API pages -->
@@ -357,7 +369,7 @@
                     <ul class="flex flex-wrap items-center text-sm">
                     </ul>
                 </div>
-                <div id="retype-copyright" class="print:justify-center py-2 text-footer-text font-footer-link text-sm leading-relaxed"><p>© 2025 Bricksum. All rights reserved.</p></div>
+                <div id="retype-copyright" class="print:justify-center py-2 text-footer-text font-footer-link text-sm leading-relaxed"><p>© 2026 Bricksum. All rights reserved.</p></div>
             </footer>
         </div>
     </div>
@@ -386,6 +398,6 @@
 
     <div id="retype-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "그룹 관리", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+        <script data-cfasync="false">window.__DOCS__ = { "title": "그룹 관리", level: 2, icon: "file", hasPrism: false, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/admin-guide/group-management.md" }</script>
 </body>
 </html>
