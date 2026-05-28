@@ -35,7 +35,7 @@ CLUMA-DOCS-RETYPE/
 │   └── audit-logs.md                 # 감사 로그
 │
 ├── settings/
-│   └── index.md                      # 내 프로필, 비밀번호, SSH Key
+│   └── index.md                      # 내 프로필, 비밀번호 (SSH Key는 v1.1에서 일시 비활성)
 │
 ├── troubleshooting/
 │   └── index.md                      # 자주 겪는 문제와 해결
